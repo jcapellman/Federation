@@ -1,0 +1,349 @@
+﻿<phone:PhoneApplicationPage xmlns:Controls="clr-namespace:Federation.Controls" 
+    x:Class="Federation.GamePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:Federation.Models"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <telerikPrimitives:RadTransitionControl.Transition>
+        <telerikPrimitives:RadFadeTransition />
+    </telerikPrimitives:RadTransitionControl.Transition>
+    
+    <phone:PhoneApplicationPage.DataContext>
+        <models:GameModel />
+    </phone:PhoneApplicationPage.DataContext>
+    
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush x:Name="imgSpace" ImageSource="Assets/Backgrounds/space.jpg" Opacity="0.75" />
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0" Height="50" Background="Black">
+            <Grid Margin="0,5,5,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+            
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+            
+                <StackPanel Grid.Row="0" Grid.Column="0" Margin="10,0,0,0" Orientation="Horizontal">
+                    <TextBlock Text="turn " />
+                    <TextBlock Text="{Binding CurrentTurnNumber}" />
+                    <TextBlock Text=" - " />
+
+                    <TextBlock Text="year " />
+                    <TextBlock Text="{Binding CurrentYear}" /> 
+                </StackPanel>
+                
+                <TextBlock Text="{Binding CurrentLatinumTotal}" Grid.Row="0" Margin="20,0,0,0" Grid.Column="1" />
+                <Image Grid.Row="0" Grid.Column="2" Margin="10,0,0,0" Source="Assets/ResourceBar/latinum.png" />
+
+                <TextBlock Text="{Binding CurrentAlloyTotal}" Grid.Row="0" Margin="20,0,0,0" Grid.Column="3" />
+                <Image Grid.Row="0" Grid.Column="4" Margin="10,0,0,0" Source="Assets/ResourceBar/alloys.png" />
+
+                <TextBlock Text="{Binding CurrentDilithiumTotal}" Grid.Row="0" Margin="20,0,0,0" Grid.Column="5" />
+                <Image Grid.Row="0" Grid.Column="6" Margin="10,0,0,0"  Source="Assets/ResourceBar/dilithium.png" />
+            </Grid>
+        </Grid>
+
+        <phone:Panorama Grid.Row="1" Margin="0,-20,0,0">
+            <phone:PanoramaItem HeaderTemplate="{StaticResource MainHeaderTemplate}" Header="turn summary">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ListBox Margin="10,0,0,0" Grid.Column="0" ItemsSource="{Binding EventSummary}">
+                        <ListBox.Background>
+                            <SolidColorBrush Opacity="0.5" Color="Black" />
+                        </ListBox.Background>
+                        
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Grid.Column="0"  Source="{Binding EventIconImageString}" Width="64" Height="64" />
+                                
+                                    <TextBlock Grid.Column="1" FontSize="20"  Text="{Binding Description}" TextWrapping="Wrap" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Controls:lcarButton Grid.Row="0" x:Name="lBtnAdvisors" TextContent="Advisors" />
+                        <Controls:lcarButton Grid.Row="1"  x:Name="lBtnNextTurn" Tap="LBtnNextTurn_OnTap" TextContent="Next Turn" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    </Grid>
+                </Grid>
+            </phone:PanoramaItem>
+
+            <phone:PanoramaItem HeaderTemplate="{StaticResource MainHeaderTemplate}" Header="galaxy">
+                <ItemsControl ItemsSource="{Binding GalaxyPlanets}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <telerikPrimitives:RadUniformGrid x:Name="rugGalaxy" Margin="0,-20,0,20" NumberOfColumns="8" NumberOfRows="4" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>                
+            </phone:PanoramaItem>
+
+            <phone:PanoramaItem HeaderTemplate="{StaticResource MainHeaderTemplate}" Header="planets">
+                <ListBox Margin="10,0,0,0" HorizontalAlignment="Stretch" ItemsSource="{Binding Planets}">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>                        
+                            <Grid Height="164" Margin="0,0,0,20" Width="Auto" HorizontalAlignment="Stretch">
+                                <Grid.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0.75" />
+                                </Grid.Background>
+                                
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                            
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />                                    
+                                </Grid.RowDefinitions>
+                            
+                                <Image Grid.Column="0" Margin="10,0,0,0" Height="128" Grid.RowSpan="2" Source="{Binding PlanetTexture}" />
+                            
+                                <Grid Grid.Column="1" Margin="20,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    
+                                    <TextBlock Grid.ColumnSpan="6" Margin="0,20,0,0" Grid.Row="0" Text="{Binding Description}" />
+
+                                    <TextBlock Text="{Binding LatinumPerTurn}" Grid.Row="1" VerticalAlignment="Center" Margin="0,0,0,0" Grid.Column="0" />
+                                    <Image Grid.Row="1" Grid.Column="1" Margin="10,0,0,0" Source="Assets/ResourceBar/latinum.png" />
+
+                                    <TextBlock Text="{Binding AlloyPerTurn}" VerticalAlignment="Center" Grid.Row="1" Margin="20,0,0,0" Grid.Column="2" />
+                                    <Image Grid.Row="1" Grid.Column="3" Margin="10,0,0,0" Source="Assets/ResourceBar/alloys.png" />
+
+                                    <TextBlock Text="{Binding DilithiumPerTurn}" VerticalAlignment="Center" Grid.Row="1" Margin="20,0,0,0" Grid.Column="4" />
+                                    <Image Grid.Row="1" Grid.Column="5" Margin="10,0,0,0"  Source="Assets/ResourceBar/dilithium.png" />
+
+                                    <Controls:lcarButton Grid.Row="0" Margin="0,30,0,0" Grid.RowSpan="2" Grid.Column="6" TextContent="manage" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </phone:PanoramaItem>
+
+            <phone:PanoramaItem HeaderTemplate="{StaticResource MainHeaderTemplate}" Header="research">
+                <ListBox Margin="10,0,0,0" HorizontalAlignment="Stretch" ItemsSource="{Binding ResearchItems}">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="164" Margin="0,0,0,20" Width="Auto" HorizontalAlignment="Stretch">
+                                <Grid.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0.75" />
+                                </Grid.Background>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image Source="{Binding Object.TextureName}" Margin="10,0,0,0"  Height="64" Grid.Column="0" />
+                                
+                                <Grid Grid.Column="1" Margin="20,0,0,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Object.Description}" />
+                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding TurnsRemaining}" />
+                                    
+                                    <Controls:lcarButton Grid.RowSpan="2" Grid.Row="0" Grid.Column="1" TextContent="Cancel" />
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </phone:PanoramaItem>
+
+            <phone:PanoramaItem HeaderTemplate="{StaticResource MainHeaderTemplate}"  Header="construction">
+                <ListBox Margin="10,0,0,0" HorizontalAlignment="Stretch" ItemsSource="{Binding ConstructionItems}">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="164" Margin="0,0,0,20" Width="Auto" HorizontalAlignment="Stretch">
+                                <Grid.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0.75" />
+                                </Grid.Background>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding Object.TextureName}" Margin="10,0,0,0"  Height="64" Grid.Column="0" />
+
+                                <Grid Grid.Column="1" Margin="20,0,0,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Object.Description}" />
+                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding TurnsRemaining}" />
+
+                                    <Controls:lcarButton Grid.RowSpan="2" Grid.Row="0" Grid.Column="1" TextContent="Cancel" />
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </phone:PanoramaItem>
+
+            <phone:PanoramaItem HeaderTemplate="{StaticResource MainHeaderTemplate}" Header="fleet">
+                <ListBox Margin="10,0,0,0" HorizontalAlignment="Stretch" ItemsSource="{Binding Ships}">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="164" Margin="0,0,0,20" Width="Auto" HorizontalAlignment="Stretch">
+                                <Grid.Background>
+                                    <SolidColorBrush Color="Black" Opacity="0.75" />
+                                </Grid.Background>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Image Grid.Column="0" Margin="10,0,0,0" Height="128" Grid.RowSpan="2" Source="{Binding TextureName}" />
+
+                                <Grid Grid.Column="1" Margin="20,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.ColumnSpan="6" Margin="0,20,0,0" Grid.Row="0" Text="{Binding Description}" />
+
+                                    <Controls:lcarButton Grid.Row="0" Margin="0,30,0,0" Grid.RowSpan="2" Grid.Column="6" TextContent="manage" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </phone:PanoramaItem>
+        </phone:Panorama>
+
+        <telerikPrimitives:RadWindow IsFullScreen="True" x:Name="rwPause" IsClosedOnBackButton="True">
+            <telerikPrimitives:RadWindow.Background>
+                <ImageBrush ImageSource="Assets/Backgrounds/space.jpg" Opacity="1" />
+            </telerikPrimitives:RadWindow.Background>
+
+            <telerikPrimitives:RadWindow.OpenAnimation>
+                <telerik:RadFadeAnimation StartOpacity="0.0" EndOpacity="1.0" Duration="0:0:0.3" />
+            </telerikPrimitives:RadWindow.OpenAnimation>
+            <telerikPrimitives:RadWindow.CloseAnimation>
+                <telerik:RadFadeAnimation StartOpacity="1.0" EndOpacity="0.0" Duration="0:0:0.3" />
+            </telerikPrimitives:RadWindow.CloseAnimation>
+
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <Controls:lcarButton x:Name="lbOptions" Grid.Row="0" Margin="0,0,0,0" TextContent="options" />
+                <Controls:lcarButton x:Name="lbSave" Grid.Row="1" Margin="0,0,0,0" TextContent="save game" />
+            </Grid>
+        </telerikPrimitives:RadWindow>
+    </Grid>
+</phone:PhoneApplicationPage>
