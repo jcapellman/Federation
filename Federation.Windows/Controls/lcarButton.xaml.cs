@@ -18,6 +18,7 @@ namespace Federation.WindowsUniversal.Controls {
         }
 
         private void BtnMain_OnClick(object sender, RoutedEventArgs e) { meBeep.Play(); }
+
         public void Connect(int connectionId, object target)
         {
             

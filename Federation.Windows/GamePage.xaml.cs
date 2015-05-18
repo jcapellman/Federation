@@ -1,26 +1,25 @@
 ﻿using System.Windows.Input;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Input;
+using Federation.WindowsUniversal.Models;
 
-using Microsoft.Phone.Controls;
-
-using Federation.Models;
-
-namespace Federation {
-    public partial class GamePage : PhoneApplicationPage {
+namespace Federation.WindowsUniversal {
+    public partial class GamePage : Page {
         private GameModel viewModel {
             get { return (GameModel) DataContext; }
         }
-
+        
         public GamePage() {
             InitializeComponent();
 
             DataContext = new GameModel();
         }
 
-        private void LBtnNextTurn_OnTap(object sender, GestureEventArgs e) { viewModel.NextTurn(); }
-
-        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e) {
-            rwPause.IsOpen = true;
-            e.Cancel = true;
+        private void LBtnNextTurn_OnTap(object sender, TappedRoutedEventArgs tappedRoutedEventArgs) { viewModel.NextTurn(); }
+        
+        public void Connect(int connectionId, object target)
+        {
+               
         }
     }
 }

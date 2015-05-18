@@ -1,12 +1,9 @@
-﻿using System.ComponentModel;
-using System.Linq;
-using System.Threading;
-using System.Windows;
-using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
+﻿using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
-namespace Federation {
-    public partial class AboutPage : PhoneApplicationPage {
+namespace Federation.WindowsUniversal {
+    public partial class AboutPage : Page {
         readonly BackgroundWorker bgWorker = new BackgroundWorker();
 
         public AboutPage() {
