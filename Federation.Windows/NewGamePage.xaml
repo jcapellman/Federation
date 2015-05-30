@@ -1,25 +1,12 @@
-﻿<phone:PhoneApplicationPage xmlns:Controls="clr-namespace:Federation.Controls" 
-    x:Class="Federation.NewGamePage"
+﻿<Page  
+    x:Class="Federation.WindowsUniversal.NewGamePage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
-    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:models="clr-namespace:Federation.Models"
-    SupportedOrientations="Landscape" Orientation="Landscape"
-    mc:Ignorable="d"
-    shell:SystemTray.IsVisible="False">
+    xmlns:controls="using:Federation.WindowsUniversal.Controls"
+    mc:Ignorable="d">
 
-    <telerikPrimitives:RadTransitionControl.Transition>
-        <telerikPrimitives:RadFadeTransition />
-    </telerikPrimitives:RadTransitionControl.Transition>
-
-    <phone:PhoneApplicationPage.DataContext>
-        <models:NewGameModel />
-    </phone:PhoneApplicationPage.DataContext>
-    
     <Grid x:Name="LayoutRoot">
         <Grid.Background>
             <ImageBrush ImageSource="/Assets/Backgrounds/space.jpg" Opacity="0.5" />
@@ -37,7 +24,7 @@
             <TextBlock Text="new game" Margin="9,-7,0,0" Style="{StaticResource HeaderStyle}"/>
         </StackPanel>
 
-        <telerikPrimitives:RadTextBox AcceptsReturn="False" Header="character name" Grid.Row="1" Margin="10,0,10,0" Watermark="enter your name here" />
+        <TextBox Header="character name" Grid.Row="1" Margin="10,0,10,0" Text="enter your name here" />
         
         <TextBlock Text="difficulty" Foreground="Gray" Margin="20,0,0,0" FontSize="30" Grid.Row="2" />
         
@@ -48,7 +35,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        
-        <Controls:lcarButton x:Name="lBtnStart" Tap="LBtnStart_OnTap" Grid.Row="4" TextContent="start" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+
+        <controls:lcarButton x:Name="lBtnStart" Tapped="LBtnStart_OnTap"  Grid.Row="4" TextContent="start" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
     </Grid>
-</phone:PhoneApplicationPage>
+</Page>

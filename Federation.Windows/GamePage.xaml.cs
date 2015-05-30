@@ -5,13 +5,9 @@ using Federation.WindowsUniversal.Models;
 
 namespace Federation.WindowsUniversal {
     public partial class GamePage : Page {
-        private GameModel viewModel {
-            get { return (GameModel) DataContext; }
-        }
-        
-        public GamePage() {
-            InitializeComponent();
+        private GameModel viewModel => (GameModel) DataContext;
 
+        public GamePage() {
             DataContext = new GameModel();
         }
 

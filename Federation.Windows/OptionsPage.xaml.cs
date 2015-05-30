@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
+﻿using Windows.UI.Xaml.Controls;
 
-namespace Federation {
-    public partial class OptionsPage : PhoneApplicationPage {
+namespace Federation.WindowsUniversal {
+    public partial class OptionsPage : Page {
         public OptionsPage() {
             InitializeComponent();
+        }
+
+        public void Connect(int connectionId, object target) {
+                
         }
     }
 }

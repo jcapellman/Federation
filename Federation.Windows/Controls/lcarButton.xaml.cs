@@ -12,7 +12,7 @@ namespace Federation.WindowsUniversal.Controls {
             InitializeComponent();
         }
 
-        protected string TextContent {
+        public string TextContent {
             get { return tbContent.Text; }
             set { tbContent.Text = value; }
         }

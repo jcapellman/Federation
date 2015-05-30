@@ -13,29 +13,31 @@ namespace Federation.WindowsUniversal {
 
             var path = new Uri(String.Format("Assets/Music/{0}.mp3", rnd.Next(1, 1)), UriKind.RelativeOrAbsolute);
 
-            return new AudioTrack(path,
-                "Federation",
-                "Jarred Capellman",
-                "Federation OST",
-                null);
+            return new AudioTrack();
+            //return new AudioTrack().path,
+            //    "Federation",
+            //    "Jarred Capellman",
+            //    "Federation OST",
+            //    null);
         }
 
         public MainPage() {
             InitializeComponent();
 
             this.DataContext = this;
-
+/*
             BackgroundAudioPlayer.Instance.PlayStateChanged += Instance_PlayStateChanged;
 
             if (BackgroundAudioPlayer.Instance.PlayerState != PlayState.Playing) {
                 BackgroundAudioPlayer.Instance.Track = getRandomTrack();
                 BackgroundAudioPlayer.Instance.Play();
             }
-
+            */
             Loaded += FrameworkElement_Loaded;
         }
 
         private void Instance_PlayStateChanged(object sender, EventArgs e) {
+            /*
             switch (BackgroundAudioPlayer.Instance.PlayerState) {
                 case PlayState.Playing:
                     
@@ -46,7 +48,7 @@ namespace Federation.WindowsUniversal {
                     
                     break;
             }
-
+            */
         }
 
         private void FrameworkElement_Loaded(object sender, RoutedEventArgs e) {
@@ -65,11 +67,19 @@ namespace Federation.WindowsUniversal {
             }
         }
 
-        private void LBtnOptions_OnTap(object sender, TappedRoutedEventArgs tappedRoutedEventArgs) { NavigationService.Navigate(new Uri("/OptionsPage.xaml", UriKind.Relative)); }
+        private void LBtnOptions_OnTap(object sender, TappedRoutedEventArgs tappedRoutedEventArgs) { 
+            //NavigationService.Navigate(new Uri("/OptionsPage.xaml", UriKind.Relative)); 
+        }
 
-        private void LBtnNewGame_OnTap(object sender, TappedRoutedEventArgs tappedRoutedEventArgs) { NavigationService.Navigate(new Uri("/NewGamePage.xaml", UriKind.Relative)); }
+        private void LBtnNewGame_OnTap(object sender, TappedRoutedEventArgs tappedRoutedEventArgs)
+        {
+            //NavigationService.Navigate(new Uri("/NewGamePage.xaml", UriKind.Relative));
+        }
 
-        private void LBtnAbout_OnTap(object sender, TappedRoutedEventArgs tappedRoutedEventArgs) { NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative)); }
+        private void LBtnAbout_OnTap(object sender, TappedRoutedEventArgs tappedRoutedEventArgs)
+        {
+            //NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative));
+        }
 
         private void MediaElement_OnMediaEnded(object sender, RoutedEventArgs e) { ((MediaElement)sender).Play(); }
         public void Connect(int connectionId, object target)

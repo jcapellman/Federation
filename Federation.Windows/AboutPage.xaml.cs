@@ -4,17 +4,17 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Federation.WindowsUniversal {
     public partial class AboutPage : Page {
-        readonly BackgroundWorker bgWorker = new BackgroundWorker();
+   //     readonly BackgroundWorker bgWorker = new BackgroundWorker();
 
         public AboutPage() {
             InitializeComponent();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e) {
-            bgWorker.DoWork += BgWorker_DoWork;
-            bgWorker.RunWorkerCompleted += BgWorker_RunWorkerCompleted;
+            //bgWorker.DoWork += BgWorker_DoWork;
+            //bgWorker.RunWorkerCompleted += BgWorker_RunWorkerCompleted;
 
-            bgWorker.RunWorkerAsync();
+            //bgWorker.RunWorkerAsync();
         }
 
         private const int movePerTick = 1;
@@ -24,43 +24,43 @@ namespace Federation.WindowsUniversal {
         private int numPixelsBetween = 0;
         private bool alt = false;
 
-        private void BgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
-            spCredits.Margin = new Thickness(0, spCredits.Margin.Top - movePerTick, 0, 0);
+       // private void BgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
+       //     spCredits.Margin = new Thickness(0, spCredits.Margin.Top - movePerTick, 0, 0);
 
-            if (spCredits.Margin.Top <= 60) {
-                if (spCredits.Children[numOpacities].Opacity > 0.0) {
-                    spCredits.Children[numOpacities].Opacity -= .1;
-                } else {
-                    if (alt) {
-                        if (maxPixelsBetweenAltRemoval == numPixelsBetween) {
-                            numOpacities++;
-                            numPixelsBetween = 0;
-                            alt = false;
-                        } else {
-                            numPixelsBetween += movePerTick;
-                        }
-                    } else {
-                        if (maxPixelsBetweenRemoval == numPixelsBetween) {
-                            numOpacities++;
-                            numPixelsBetween = 0;
-                            alt = true;
-                        } else {
-                            numPixelsBetween += movePerTick;
-                        }
-                    }
-                }
+       //     if (spCredits.Margin.Top <= 60) {
+       //         if (spCredits.Children[numOpacities].Opacity > 0.0) {
+       //             spCredits.Children[numOpacities].Opacity -= .1;
+       //         } else {
+       //             if (alt) {
+       //                 if (maxPixelsBetweenAltRemoval == numPixelsBetween) {
+       //                     numOpacities++;
+       //                     numPixelsBetween = 0;
+       //                     alt = false;
+       //                 } else {
+       //                     numPixelsBetween += movePerTick;
+       //                 }
+       //             } else {
+       //                 if (maxPixelsBetweenRemoval == numPixelsBetween) {
+       //                     numOpacities++;
+       //                     numPixelsBetween = 0;
+       //                     alt = true;
+       //                 } else {
+       //                     numPixelsBetween += movePerTick;
+       //                 }
+       //             }
+       //         }
 
-                if (numOpacities >= spCredits.Children.Count()) {
-                    NavigationService.GoBack();
-                    return;
-                }
-            }
+       //       //  if (numOpacities >= spCredits.Children.Count()) {
+       //             //NavigationService.GoBack();
+       //         //    return;
+       //         //}
+       //     }
 
-            bgWorker.RunWorkerAsync();
-        }
+       ////     bgWorker.RunWorkerAsync();
+       // }
 
-        private void BgWorker_DoWork(object sender, DoWorkEventArgs e) {
-            Thread.Sleep(20);
-        }
+       // private void BgWorker_DoWork(object sender, DoWorkEventArgs e) {
+       //     //Thread.Sleep(20);
+       // }
     }
 }

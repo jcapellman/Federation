@@ -3,11 +3,10 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-using Federation.Controls;
+using Federation.WindowsUniversal.Controls;
 using Federation.PCL.Enums;
 using Federation.PCL.Objects;
 using Federation.PCL.Objects.Ships;
-using Federation.WindowsUniversal.Controls;
 
 namespace Federation.WindowsUniversal.Models {
     public class GameModel : INotifyPropertyChanged {
