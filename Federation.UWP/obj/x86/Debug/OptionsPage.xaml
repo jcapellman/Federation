@@ -1,0 +1,39 @@
+﻿<Page 
+    x:Class="Federation.UWP.OptionsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:ConnectionId='1' x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Backgrounds/space.jpg" Opacity="0.5" />
+        </Grid.Background>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Margin="10,0,0,0" Text="options" Grid.Row="0" />
+        
+        <TextBlock Margin="10,0,0,0"  Text="sound effects volumne" Grid.Row="1" />
+        <Slider Foreground="White" Minimum="0" Maximum="10" Margin="10,0,10,0"  Grid.Row="2" />
+
+        <TextBlock Margin="10,0,0,0"  Text="music volumne" Grid.Row="3" />
+        <Slider Foreground="White" Minimum="0" Maximum="10" Margin="10,0,10,0"  Grid.Row="4" />
+
+        <ToggleSwitch Foreground="White" Margin="10,0,10,0" Grid.Row="5">
+            <ToggleSwitch.Header>
+                <TextBlock Text="enable auto-saving" Foreground="White" />
+            </ToggleSwitch.Header>
+        </ToggleSwitch>
+   </Grid>
+</Page>
+
