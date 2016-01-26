@@ -96,7 +96,9 @@
     <None Include="Assets\Planets\Thumbs.db" />
     <None Include="Assets\Ships\Thumbs.db" />
     <None Include="Assets\Weapons\Thumbs.db" />
-    <Content Include="Fonts\lcars.ttf" />
+    <Content Include="Fonts\lcars.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>

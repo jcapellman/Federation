@@ -8,6 +8,11 @@
    
     xmlns:controls="using:Federation.UWP.Controls">
 
+    <Page.Resources>
+        <FontFamily x:Key="FedFont">/Fonts/lcars.ttf#lcars</FontFamily>
+    </Page.Resources>
+
+    
     <Grid x:ConnectionId='1' x:Name="LayoutRoot">
         <Grid.Background>
             <ImageBrush ImageSource="Assets/Backgrounds/MainMenu.jpg" />
@@ -29,7 +34,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="FEDERATION" Grid.Row="0" FontFamily=".\Fonts\LCARS.ttf#LCARS" FontSize="100" Margin="0,0,0,-20" />
+            <TextBlock Text="FEDERATION" Grid.Row="0" HorizontalAlignment="Center" FontFamily="{StaticResource FedFont}" Foreground="White" FontSize="100" Margin="0,0,0,-20" />
 
             <TextBlock Grid.Column="0" Margin="0,0,0,0" Text="Version 0.1.44.444" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Bottom" FontSize="12"/>
             
