@@ -7,6 +7,10 @@
     mc:Ignorable="d"
     d:DesignHeight="100" d:DesignWidth="250">
 
+    <UserControl.Resources>
+        <FontFamily x:Key="FedFont">/Fonts/lcars.ttf#lcars</FontFamily>
+    </UserControl.Resources>
+    
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <MediaElement x:Name="meBeep" Visibility="Collapsed" Source="/Assets/Sfx/beep.wav" AutoPlay="False" />
 
@@ -14,7 +18,7 @@
             <Grid Width="200">
                 <Border Width="200" Height="50" CornerRadius="25,25,25,25" Background="#fe9800"/>
 
-                <TextBlock x:Name="tbContent" HorizontalAlignment="Right" Padding="0,10,10,10" />
+                <TextBlock x:Name="tbContent" FontFamily="{StaticResource FedFont}" HorizontalAlignment="Right" Padding="0,10,10,10" />
             </Grid>
         </Button>
     </Grid>

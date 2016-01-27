@@ -1,5 +1,6 @@
 ﻿using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+
 using Federation.UWP.Models;
 
 namespace Federation.UWP {
@@ -11,8 +12,7 @@ namespace Federation.UWP {
             DataContext = new NewGameModel();
         }
         
-        private void LBtnStart_OnTapped(object sender, TappedRoutedEventArgs e)
-        {
+        private void LBtnStart_OnTapped(object sender, TappedRoutedEventArgs e) {
             Frame.Navigate(typeof(GamePage), viewModel.CreateGame());
         }
     }

@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Margin="12,0,0,0">
-            <TextBlock Text="new game" Margin="9,-7,0,0" Style="{StaticResource HeaderStyle}"/>
+            <TextBlock Text="new game" Margin="9,-7,0,0" />
         </StackPanel>
 
         <TextBox Header="character name" Grid.Row="1" Margin="10,0,10,0" Text="enter your name here" />
@@ -31,7 +31,7 @@
         <ComboBox x:ConnectionId='2' x:Name="cmboDifficulty" Margin="20,0,0,0" ItemsSource="{Binding Difficulties}" Grid.Row="3">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding}" Style="{StaticResource HeaderStyle}" Foreground="White" FontSize="40" />
+                    <TextBlock Text="{Binding}" Foreground="White" FontSize="40" />
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
