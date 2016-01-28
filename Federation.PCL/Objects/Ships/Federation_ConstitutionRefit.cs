@@ -4,33 +4,21 @@ namespace Federation.PCL.Objects.Ships {
     [DataContract]
     public class Federation_ConstitutionRefit : BaseShip {
         [DataMember]
-        public override RACE RaceType {
-            get { return RACE.FEDERATION; }
-        }
+        public override RACE RaceType => RACE.FEDERATION;
 
         [DataMember]
-        public override int Attack {
-            get { return 2; }
-        }
+        public override int Attack => 2;
 
         [DataMember]
-        public override int Defense {
-            get { return 3; }
-        }
+        public override int Defense => 3;
 
         [DataMember]
-        public override int DilithiumCostPerTurn {
-            get { return 3; }
-        }
+        public override int DilithiumCostPerTurn => 3;
 
         [DataMember]
-        public override string Description {
-            get { return "Constituion (Refit) Class"; }
-        }
+        public override string Description => "Constituion (Refit) Class";
 
         [DataMember]
-        public override string TextureName {
-            get { return GetTextureName("ConstitutionRefit"); }
-        }
+        public override string TextureName => GetTextureName("ConstitutionRefit");
     }
 }
