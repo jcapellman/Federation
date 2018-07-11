@@ -12,9 +12,9 @@
         <models:GameModel />
     </Page.DataContext>
     
-    <Grid x:ConnectionId='1' x:Name="LayoutRoot">
+    <Grid x:ConnectionId='2' x:Name="LayoutRoot">
         <Grid.Background>
-            <ImageBrush x:ConnectionId='2' x:Name="imgSpace" ImageSource="Assets/Backgrounds/space.jpg" Opacity="0.75" />
+            <ImageBrush x:ConnectionId='3' x:Name="imgSpace" ImageSource="Assets/Backgrounds/space.jpg" Opacity="0.75" />
         </Grid.Background>
 
         <Grid.RowDefinitions>
@@ -96,8 +96,8 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
 
-                        <controls:lcarButton x:ConnectionId='3' Grid.Row="0" x:Name="lBtnAdvisors" TextContent="Advisors" />
-                        <controls:lcarButton x:ConnectionId='4' Grid.Row="1"  x:Name="lBtnNextTurn"                             TextContent="Next Turn" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                        <controls:lcarButton x:ConnectionId='8' Grid.Row="0" x:Name="lBtnAdvisors" TextContent="Advisors" />
+                        <controls:lcarButton x:ConnectionId='9' Grid.Row="1"  x:Name="lBtnNextTurn"                             TextContent="Next Turn" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                     </Grid>
                 </Grid>
             </PivotItem>

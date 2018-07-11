@@ -13,7 +13,7 @@
     </Page.Resources>
 
     
-    <Grid x:ConnectionId='1' x:Name="LayoutRoot">
+    <Grid x:ConnectionId='2' x:Name="LayoutRoot">
         <Grid.Background>
             <ImageBrush ImageSource="Assets/Backgrounds/space.jpg" />
         </Grid.Background>
@@ -38,19 +38,19 @@
 
             <TextBlock Grid.Column="0" Margin="0,0,0,0" Text="Version 0.1.44.444" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Bottom" FontSize="12"/>
             
-            <controls:lcarButton x:ConnectionId='5' x:Name="lBtnAbout"                          Grid.Column="1" Grid.Row="0" TextContent="about" HorizontalAlignment="Right" />            
+            <controls:lcarButton x:ConnectionId='6' x:Name="lBtnAbout"                          Grid.Column="1" Grid.Row="0" TextContent="about" HorizontalAlignment="Right" />            
         </Grid>
         
-        <Grid x:ConnectionId='2' x:Name="ContentPanel" Grid.Row="1" Margin="0,40,0,0" HorizontalAlignment="Right">
+        <Grid x:ConnectionId='3' x:Name="ContentPanel" Grid.Row="1" Margin="0,40,0,0" HorizontalAlignment="Right">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />                
             </Grid.RowDefinitions>
 
-            <controls:lcarButton x:ConnectionId='3' x:Name="lBtnNewGame"                            Grid.Column="0" Grid.Row="0" TextContent="new game" HorizontalAlignment="Right" />
+            <controls:lcarButton x:ConnectionId='4' x:Name="lBtnNewGame"                            Grid.Column="0" Grid.Row="0" TextContent="new game" HorizontalAlignment="Right" />
             <controls:lcarButton Grid.Column="0" Grid.Row="1" TextContent="load game" HorizontalAlignment="Right" />
-            <controls:lcarButton x:ConnectionId='4' x:Name="lBtnOptions"                            Grid.Column="0" Grid.Row="2" TextContent="options" HorizontalAlignment="Right" />            
+            <controls:lcarButton x:ConnectionId='5' x:Name="lBtnOptions"                            Grid.Column="0" Grid.Row="2" TextContent="options" HorizontalAlignment="Right" />            
         </Grid>
     </Grid>
 </Page>

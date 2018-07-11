@@ -9,12 +9,12 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="64" d:DesignWidth="64">
     
-    <Grid x:ConnectionId='1' x:Name="LayoutRoot" Width="64" Height="64">
+    <Grid x:ConnectionId='2' x:Name="LayoutRoot" Width="64" Height="64">
         <Grid.Background>
-            <ImageBrush x:ConnectionId='2' x:Name="ibBackground" Opacity="0.75" />
+            <ImageBrush x:ConnectionId='3' x:Name="ibBackground" Opacity="0.75" />
         </Grid.Background>
 
-        <Image x:ConnectionId='3' x:Name="imgRace" Width="64" Height="64" />
+        <Image x:ConnectionId='4' x:Name="imgRace" Width="64" Height="64" />
     </Grid>
 </UserControl>
 

@@ -8,7 +8,7 @@
     mc:Ignorable="d"
    >
 
-    <Grid x:ConnectionId='1' x:Name="LayoutRoot">
+    <Grid x:ConnectionId='2' x:Name="LayoutRoot">
         <Grid.Background>
             <ImageBrush ImageSource="Assets/Backgrounds/Battle.jpg" />
         </Grid.Background>
@@ -18,7 +18,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid x:ConnectionId='2' x:Name="ContentPanel" Grid.Row="1" Margin="0,0,0,0">
+        <Grid x:ConnectionId='3' x:Name="ContentPanel" Grid.Row="1" Margin="0,0,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />

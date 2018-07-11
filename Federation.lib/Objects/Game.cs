@@ -1,10 +1,9 @@
 ﻿using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
+using Federation.lib.Enums;
+using Federation.lib.Objects.Ships;
 
-using Federation.PCL.Enums;
-using Federation.PCL.Objects.Ships;
-
-namespace Federation.PCL.Objects {
+namespace Federation.lib.Objects {
     [DataContract]
     public class Game {
         [DataMember]

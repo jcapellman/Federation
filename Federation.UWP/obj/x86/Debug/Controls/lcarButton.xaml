@@ -11,14 +11,14 @@
         <FontFamily x:Key="FedFont">/Fonts/lcars.ttf#lcars</FontFamily>
     </UserControl.Resources>
     
-    <Grid x:ConnectionId='1' x:Name="LayoutRoot" Background="Transparent">
-        <MediaElement x:ConnectionId='2' x:Name="meBeep" Visibility="Collapsed" Source="/Assets/Sfx/beep.wav" AutoPlay="False" />
+    <Grid x:ConnectionId='2' x:Name="LayoutRoot" Background="Transparent">
+        <MediaElement x:ConnectionId='3' x:Name="meBeep" Visibility="Collapsed" Source="/Assets/Sfx/beep.wav" AutoPlay="False" />
 
-        <Button x:ConnectionId='3' Grid.Row="0" BorderBrush="Transparent" x:Name="btnMain"                        >
+        <Button x:ConnectionId='4' Grid.Row="0" BorderBrush="Transparent" x:Name="btnMain"                        >
             <Grid Width="200">
                 <Border Width="200" Height="50" CornerRadius="25,25,25,25" Background="#fe9800"/>
 
-                <TextBlock x:ConnectionId='4' x:Name="tbContent" FontFamily="{StaticResource FedFont}" HorizontalAlignment="Right" Padding="0,10,10,10" />
+                <TextBlock x:ConnectionId='5' x:Name="tbContent" FontFamily="{StaticResource FedFont}" HorizontalAlignment="Right" Padding="0,10,10,10" />
             </Grid>
         </Button>
     </Grid>

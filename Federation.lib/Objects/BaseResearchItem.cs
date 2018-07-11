@@ -1,8 +1,8 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Federation.PCL.Objects {
+namespace Federation.lib.Objects {
     [DataContract]
-    public class BaseConstructionItem {
+    public class BaseResearchItem {
         [DataMember]
         public int TurnsRemaining { get; set; }
 

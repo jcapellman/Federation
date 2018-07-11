@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Federation.PCL.Enums;
-using Federation.PCL.Objects;
+using Federation.lib.Enums;
+using Federation.lib.Objects;
 
 namespace Federation.UWP.Models {
     public class NewGameModel : INotifyPropertyChanged {
@@ -24,7 +24,7 @@ namespace Federation.UWP.Models {
         }
 
         public Game CreateGame() {
-            return new Game(PlayerName, (PCL.Enums.Difficulty)Enum.Parse(typeof(Difficulty), _difficulty[0]));
+            return new Game(PlayerName, (Difficulty)Enum.Parse(typeof(Difficulty), _difficulty[0]));
         }
 
 #region PropertyChanged

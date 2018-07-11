@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Federation.PCL.Objects.PlanetObjects {
+namespace Federation.lib.Objects.PlanetObjects {
     [DataContract]
     public class BasePlanetObject : BaseObject {
         public override int DilithiumCostPerTurn {

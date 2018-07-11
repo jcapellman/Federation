@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Federation.PCL.Objects {
+namespace Federation.lib.Objects {
     [DataContract]
     public class Planets {
         [DataMember]

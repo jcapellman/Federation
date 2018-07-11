@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Federation.PCL.Objects {
+namespace Federation.lib.Objects {
     public abstract class BaseObject {
         public enum RACE {
             FEDERATION,

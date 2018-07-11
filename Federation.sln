@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27906.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Federation.PCL", "Federation.PCL\Federation.PCL.csproj", "{7A2E20B9-7DFC-48CA-A310-C46B26D94FE1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Federation.lib", "Federation.lib\Federation.lib.csproj", "{7A2E20B9-7DFC-48CA-A310-C46B26D94FE1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Federation.UWP", "Federation.UWP\Federation.UWP.csproj", "{A605752C-538D-4532-A594-FAF2266538B4}"
 EndProject
@@ -56,5 +56,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {606CD7C8-EAE9-4E93-A261-EA119AFCFE6D}
 	EndGlobalSection
 EndGlobal

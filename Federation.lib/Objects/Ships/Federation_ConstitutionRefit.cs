@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Federation.PCL.Objects.Ships {
+namespace Federation.lib.Objects.Ships {
     [DataContract]
     public class Federation_ConstitutionRefit : BaseShip {
         [DataMember]

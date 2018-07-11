@@ -2,11 +2,10 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
+using Federation.lib.Enums;
+using Federation.lib.Objects;
+using Federation.lib.Objects.Ships;
 using Federation.UWP.Controls;
-using Federation.PCL.Enums;
-using Federation.PCL.Objects;
-using Federation.PCL.Objects.Ships;
 
 namespace Federation.UWP.Models {
     public class GameModel : INotifyPropertyChanged {

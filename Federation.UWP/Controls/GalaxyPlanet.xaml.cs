@@ -2,7 +2,7 @@
 
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
-using Federation.PCL.Objects;
+using Federation.lib.Objects;
 
 namespace Federation.UWP.Controls {
     public partial class GalaxyPlanet : UserControl {

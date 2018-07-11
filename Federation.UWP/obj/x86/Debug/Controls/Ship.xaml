@@ -6,17 +6,17 @@
     mc:Ignorable="d"
     d:DesignHeight="480" d:DesignWidth="480">
     
-    <Grid x:ConnectionId='1' x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:ConnectionId='2' x:Name="LayoutRoot" Background="Transparent">
         <Grid.Resources>
-            <Storyboard x:ConnectionId='2' x:Name="MainImageSlideIn">
+            <Storyboard x:ConnectionId='3' x:Name="MainImageSlideIn">
                 <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="MainImage">
                     <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-                    <EasingDoubleKeyFrame x:ConnectionId='3' x:Name="keyFrameEnd"  Value="500" />
+                    <EasingDoubleKeyFrame x:ConnectionId='4' x:Name="keyFrameEnd"  Value="500" />
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
         </Grid.Resources>
         
-        <Image x:ConnectionId='4' x:Name="MainImage" Width="96" Height="96" HorizontalAlignment="Left">
+        <Image x:ConnectionId='5' x:Name="MainImage" Width="96" Height="96" HorizontalAlignment="Left">
             <Image.RenderTransform>
                 <CompositeTransform TranslateX="0" />
             </Image.RenderTransform>

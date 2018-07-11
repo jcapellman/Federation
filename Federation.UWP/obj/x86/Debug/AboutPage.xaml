@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:ConnectionId='1' x:Name="LayoutRoot">
+    <Grid x:ConnectionId='2' x:Name="LayoutRoot">
         <Grid.Background>
             <ImageBrush ImageSource="Assets/Backgrounds/MainMenu.jpg" />
         </Grid.Background>
@@ -34,7 +34,7 @@
             <TextBlock Grid.Row="0" Grid.Column="1" Text="about" FontFamily=".\Fonts\LCARS.ttf#LCARS" FontSize="75" Margin="0,10,20,0" Foreground="#e8e000" />
         </Grid>
         
-        <StackPanel x:ConnectionId='2' x:Name="spCredits" Grid.Row="1" Orientation="Vertical" Margin="0,350,0,0">
+        <StackPanel x:ConnectionId='3' x:Name="spCredits" Grid.Row="1" Orientation="Vertical" Margin="0,350,0,0">
             <TextBlock Text="programming" HorizontalAlignment="Center" />
             <TextBlock Text="Jarred Capellman" HorizontalAlignment="Center" />
 
