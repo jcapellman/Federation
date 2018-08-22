@@ -5,3 +5,5 @@ obj/
 /Properties/PublishProfiles
 packages/
 Debug/
+*/obj/*
+/Federation.UWP/obj/x86/*
