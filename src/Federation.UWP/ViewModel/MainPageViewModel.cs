@@ -13,7 +13,12 @@ namespace Federation.UWP.ViewModel
         private readonly IList<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
         {
             ("galaxy_map", typeof(GalaxyMapPage)),
-            ("shipyards", typeof(ShipyardsPage))
+            ("territory", typeof(TerritoryPage)),
+            ("shipyards", typeof(ShipyardsPage)),
+            ("research", typeof(ResearchPage)),
+            ("resources", typeof(ResourcesPage)),
+            ("save_game", typeof(SaveGamePage)),
+            ("quit_to_menu", typeof(MainMenuPage)),
         };
 
         public Type GetSelectedPageType(NavigationViewItem selectedNavItem)
