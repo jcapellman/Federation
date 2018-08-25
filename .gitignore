@@ -7,3 +7,4 @@ packages/
 Debug/
 */obj/*
 /Federation.UWP/obj/x86/*
+*.user
