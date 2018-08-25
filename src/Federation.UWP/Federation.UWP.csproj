@@ -256,12 +256,6 @@
       <Version>2.0.180724003-prerelease</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Federation.lib\Federation.lib.csproj">
-      <Project>{0ae4a69f-4856-4dbc-b505-56441eb21223}</Project>
-      <Name>Federation.lib</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
