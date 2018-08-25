@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28016.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Federation.UWP", "Federation.UWP\Federation.UWP.csproj", "{206DABE9-5E68-436C-9594-87DA8A750FBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Federation.lib", "Federation.lib\Federation.lib.csproj", "{0AE4A69F-4856-4DBC-B505-56441EB21223}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Federation.lib", "Federation.lib\Federation.lib.csproj", "{0AE4A69F-4856-4DBC-B505-56441EB21223}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,6 +22,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{206DABE9-5E68-436C-9594-87DA8A750FBE}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{206DABE9-5E68-436C-9594-87DA8A750FBE}.Debug|Any CPU.Build.0 = Debug|x86
+		{206DABE9-5E68-436C-9594-87DA8A750FBE}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{206DABE9-5E68-436C-9594-87DA8A750FBE}.Debug|ARM.ActiveCfg = Debug|ARM
 		{206DABE9-5E68-436C-9594-87DA8A750FBE}.Debug|ARM.Build.0 = Debug|ARM
 		{206DABE9-5E68-436C-9594-87DA8A750FBE}.Debug|ARM.Deploy.0 = Debug|ARM

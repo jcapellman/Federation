@@ -6,14 +6,27 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    RequestedTheme="Dark"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
         <NavigationView IsSettingsVisible="False">
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="Next Turn" Icon="Refresh" />
-                <NavigationViewItem Content="Shipyards" />
+                <NavigationViewItem Content="Next Turn" Tag="next_turn" Icon="Clock" />
+                <NavigationViewItemSeparator />
+                <NavigationViewItem Content="Galaxy Map" Tag="galaxy_map" Icon="Map" />
+                <NavigationViewItem Content="Territory" Tag="territory" Icon="World" />
+                <NavigationViewItem Content="Shipyards" Tag="shipyards" Icon="Setting" />
+                <NavigationViewItem Content="Research" Tag="research" Icon="Contact" />
+                <NavigationViewItem Content="Resources" Tag="resources" Icon="Shop" />
             </NavigationView.MenuItems>
+
+            <NavigationView.PaneFooter>
+                <StackPanel>
+                    <NavigationViewItem Content="Save Game" Tag="save_game" Icon="Save" />
+                    <NavigationViewItem Content="Quit to Menu" Tag="quit_to_menu" Icon="Cancel" />
+                </StackPanel>
+            </NavigationView.PaneFooter>
 
             <Frame x:Name="mainContent" />
         </NavigationView>
