@@ -5,12 +5,17 @@
     xmlns:local="using:Federation.UWP.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:Federation.UWP.ViewModel"
     mc:Ignorable="d"
     RequestedTheme="Dark"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.DataContext>
+        <viewModel:MainPageViewModel />
+    </Page.DataContext>
+
     <Grid>
-        <NavigationView IsSettingsVisible="False">
+        <NavigationView IsSettingsVisible="False" SelectionChanged="NavigationView_OnSelectionChanged">
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Next Turn" Tag="next_turn" Icon="Clock" />
                 <NavigationViewItemSeparator />
