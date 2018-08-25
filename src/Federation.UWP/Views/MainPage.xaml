@@ -9,6 +9,13 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <NavigationView IsSettingsVisible="False">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Next Turn" Icon="Refresh" />
+                <NavigationViewItem Content="Shipyards" />
+            </NavigationView.MenuItems>
 
+            <Frame x:Name="mainContent" />
+        </NavigationView>
     </Grid>
 </Page>
