@@ -2,5 +2,10 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Federation.UWP.Styles">
+    <FontFamily x:Key="MainLCARS">ms-appx:///Assets/Fonts/lcars.ttf#LCARS</FontFamily>
 
+    <Style x:Key="TextBlockHeaderStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="55" />
+        <Setter Property="FontFamily" Value="{StaticResource MainLCARS}" />
+    </Style> 
 </ResourceDictionary>
