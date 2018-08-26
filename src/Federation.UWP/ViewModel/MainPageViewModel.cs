@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
+using Federation.UWP.Objects.UI;
 using Federation.UWP.Views;
 
 using NavigationViewItem = Windows.UI.Xaml.Controls.NavigationViewItem;
@@ -10,22 +10,36 @@ namespace Federation.UWP.ViewModel
 {
     public class MainPageViewModel : BaseViewModel
     {
-        private readonly IList<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
+        private readonly IList<NavigationItem> _pages = new List<NavigationItem>
         {
-            ("galaxy_map", typeof(GalaxyMapPage)),
-            ("territory", typeof(TerritoryPage)),
-            ("shipyards", typeof(ShipyardsPage)),
-            ("research", typeof(ResearchPage)),
-            ("resources", typeof(ResourcesPage)),
-            ("save_game", typeof(SaveGamePage)),
-            ("quit_to_menu", typeof(MainMenuPage)),
+            new NavigationItem("galaxy_map", typeof(GalaxyMapPage), "Galaxy Map"),
+            new NavigationItem("territory", typeof(TerritoryPage), "Territory"),
+            new NavigationItem("shipyards", typeof(ShipyardsPage), "Shipyards"),
+            new NavigationItem("research", typeof(ResearchPage), "Research"),
+            new NavigationItem("resources", typeof(ResourcesPage), "Resources"),
+            new NavigationItem("save_game", typeof(SaveGamePage), "Save Game"),
+            new NavigationItem("quit_to_menu", typeof(MainMenuPage), "Quit to Main Menu")
         };
 
-        public Type GetSelectedPageType(NavigationViewItem selectedNavItem)
-        {
-            var item = _pages.First(p => p.Tag.Equals(selectedNavItem.Tag));
+        private NavigationItem _selectedNavigationItem;
 
-            return item.Page;
+        public NavigationItem SelectedNavigationItem
+        {
+            get => _selectedNavigationItem;
+
+            set
+            {
+                _selectedNavigationItem = value;
+
+                OnPropertyChanged();
+            }
+        }
+
+        public bool UpdateNavigationItem(NavigationViewItem selectedNavItem)
+        {
+            SelectedNavigationItem = _pages.FirstOrDefault(p => p.Tag.Equals(selectedNavItem.Tag));
+
+            return SelectedNavigationItem != null;
         }
     }
 }
