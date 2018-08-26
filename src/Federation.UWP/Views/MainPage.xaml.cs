@@ -22,11 +22,13 @@ namespace Federation.UWP.Views
         private void MainPage_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             nvMain.IsPaneOpen = false;
+            
+            NavigateToPage("galaxy_map");
         }
 
-        private void NavigationView_OnSelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        private void NavigateToPage(string tagName)
         {
-            var nav = ViewModel.UpdateNavigationItem((NavigationViewItem) args.SelectedItem);
+            var nav = ViewModel.UpdateNavigationItem(tagName);
 
             if (!nav)
             {
@@ -34,6 +36,11 @@ namespace Federation.UWP.Views
             }
 
             mainContent.Navigate(ViewModel.SelectedNavigationItem.PageType);
+        }
+
+        private void NavigationView_OnSelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            NavigateToPage(((NavigationViewItem)args.SelectedItem).Tag.ToString());
         }
     }
 }

@@ -35,9 +35,9 @@ namespace Federation.UWP.ViewModel
             }
         }
 
-        public bool UpdateNavigationItem(NavigationViewItem selectedNavItem)
+        public bool UpdateNavigationItem(string tagName)
         {
-            SelectedNavigationItem = _pages.FirstOrDefault(p => p.Tag.Equals(selectedNavItem.Tag));
+            SelectedNavigationItem = _pages.FirstOrDefault(p => p.Tag.Equals(tagName));
 
             return SelectedNavigationItem != null;
         }
