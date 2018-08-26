@@ -19,7 +19,14 @@ namespace Federation.UWP.Views
 
         private void NavigationView_OnSelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
-            mainContent.Navigate(ViewModel.GetSelectedPageType((NavigationViewItem)args.SelectedItem));
+            var nav = ViewModel.UpdateNavigationItem((NavigationViewItem) args.SelectedItem);
+
+            if (!nav)
+            {
+                return;
+            }
+
+            mainContent.Navigate(ViewModel.SelectedNavigationItem.PageType);
         }
     }
 }

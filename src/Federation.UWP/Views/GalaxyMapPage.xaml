@@ -10,7 +10,12 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" ImageSource="ms-appx:///Assets/Backgrounds/Galaxy.jpg"/>
+            <ImageBrush Stretch="UniformToFill" Opacity=".5" ImageSource="ms-appx:///Assets/Backgrounds/Galaxy.jpg"/>
         </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
     </Grid>
 </Page>

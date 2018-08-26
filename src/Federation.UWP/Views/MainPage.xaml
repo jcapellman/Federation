@@ -15,7 +15,7 @@
     </Page.DataContext>
 
     <Grid>
-        <NavigationView IsSettingsVisible="False" SelectionChanged="NavigationView_OnSelectionChanged">
+        <NavigationView IsBackEnabled="False" IsBackButtonVisible="Collapsed" IsPaneOpen="False" IsSettingsVisible="False" SelectionChanged="NavigationView_OnSelectionChanged">
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Next Turn" Tag="next_turn" Icon="Clock" />
                 <NavigationViewItemSeparator />
@@ -32,6 +32,10 @@
                     <NavigationViewItem Content="Quit to Menu" Tag="quit_to_menu" Icon="Cancel" />
                 </StackPanel>
             </NavigationView.PaneFooter>
+
+            <NavigationView.Header>
+                <TextBlock Style="{StaticResource TextBlockHeaderStyle}" Text="{Binding SelectedNavigationItem.PageTitle}" />
+            </NavigationView.Header>
 
             <Frame x:Name="mainContent" />
         </NavigationView>
