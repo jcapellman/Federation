@@ -120,9 +120,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\ExtensionMethods.cs" />
     <Compile Include="Controls\GalaxyMapItemControl.xaml.cs">
       <DependentUpon>GalaxyMapItemControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Enums\LocalizedStrings.cs" />
     <Compile Include="Enums\Race.cs" />
     <Compile Include="Objects\UI\NavigationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -163,6 +165,7 @@
     <Content Include="Assets\Backgrounds\Shipyards.jpg" />
     <Content Include="Assets\Backgrounds\Territory.jpg" />
     <Content Include="Assets\Fonts\lcars.ttf" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Backgrounds\Galaxy.jpg" />
