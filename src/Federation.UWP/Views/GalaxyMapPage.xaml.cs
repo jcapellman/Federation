@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Windows.UI.Xaml.Controls;
 
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media.Imaging;
+using Federation.UWP.Controls;
+using Federation.UWP.Enums;
 
 namespace Federation.UWP.Views
 {
@@ -9,19 +9,14 @@ namespace Federation.UWP.Views
     {
         public GalaxyMapPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
-            var federationImage = new BitmapImage(new Uri("ms-appx:///Assets/Races/Federation.png"));
-
-            for (var x = 0; x < 5; x++)
+            for (var x = 0; x < 25; x++)
             {
-                for (var y = 0; y < 5; y++)
+                ugMap.Children.Add(new GalaxyMapItemControl
                 {
-                    ugMap.Children.Add(new Image
-                    {
-                        Source = federationImage
-                    });
-                }
+                    SelectedRace = Race.Cardassian
+                });
             }
         }
     }
