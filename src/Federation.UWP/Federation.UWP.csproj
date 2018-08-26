@@ -120,6 +120,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Objects\UI\NavigationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
@@ -153,6 +154,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="Federation.UWP_TemporaryKey.pfx" />
+    <Content Include="Assets\Fonts\lcars.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Backgrounds\Galaxy.jpg" />
