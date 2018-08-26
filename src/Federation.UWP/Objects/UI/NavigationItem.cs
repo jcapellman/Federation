@@ -1,5 +1,8 @@
 ﻿using System;
 
+using Federation.UWP.Common;
+using Federation.UWP.Enums;
+
 namespace Federation.UWP.Objects.UI
 {
     public class NavigationItem
@@ -12,9 +15,9 @@ namespace Federation.UWP.Objects.UI
 
         public NavigationItem() { }
 
-        public NavigationItem(string tag, Type pageType, string pageTitle)
+        public NavigationItem(string tag, Type pageType, LocalizedStrings pageTitle)
         {
-            PageTitle = pageTitle;
+            PageTitle = pageTitle.ToLocalizedString();
             Tag = tag;
             PageType = pageType;
         }
