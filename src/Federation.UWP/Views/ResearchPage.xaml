@@ -5,10 +5,15 @@
     xmlns:local="using:Federation.UWP.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" Opacity=".5" ImageSource="ms-appx:///Assets/Backgrounds/Research.jpg"/>
+        </Grid.Background>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
     </Grid>
 </Page>

@@ -154,6 +154,10 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="Federation.UWP_TemporaryKey.pfx" />
+    <Content Include="Assets\Backgrounds\Research.jpg" />
+    <Content Include="Assets\Backgrounds\Resources.jpg" />
+    <Content Include="Assets\Backgrounds\Shipyards.jpg" />
+    <Content Include="Assets\Backgrounds\Territory.jpg" />
     <Content Include="Assets\Fonts\lcars.ttf" />
   </ItemGroup>
   <ItemGroup>
