@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Federation.UWP.Views"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"    
@@ -13,9 +14,11 @@
             <ImageBrush Stretch="UniformToFill" Opacity=".5" ImageSource="ms-appx:///Assets/Backgrounds/Galaxy.jpg"/>
         </Grid.Background>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-
+        <controls:UniformGrid 
+            x:Name="ugMap"
+            Orientation="Horizontal"
+            Rows="5"
+            Columns="5">
+        </controls:UniformGrid>
     </Grid>
 </Page>
