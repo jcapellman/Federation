@@ -15,6 +15,13 @@ namespace Federation.UWP.Views
         public MainPage()
         {
             InitializeComponent();
+
+            Loaded += MainPage_Loaded;
+        }
+
+        private void MainPage_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            nvMain.IsPaneOpen = false;
         }
 
         private void NavigationView_OnSelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)

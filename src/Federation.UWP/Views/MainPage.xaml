@@ -15,7 +15,7 @@
     </Page.DataContext>
 
     <Grid>
-        <NavigationView IsBackEnabled="False" IsBackButtonVisible="Collapsed" IsPaneOpen="False" IsSettingsVisible="False" SelectionChanged="NavigationView_OnSelectionChanged">
+        <NavigationView x:Name="nvMain" IsBackEnabled="False" IsBackButtonVisible="Collapsed" IsPaneOpen="False" IsSettingsVisible="False" SelectionChanged="NavigationView_OnSelectionChanged">
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Next Turn" Tag="next_turn" Icon="Clock" />
                 <NavigationViewItemSeparator />
