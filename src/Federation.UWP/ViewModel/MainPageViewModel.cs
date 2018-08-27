@@ -2,6 +2,7 @@
 using System.Linq;
 
 using Federation.UWP.Enums;
+using Federation.UWP.Objects.Game;
 using Federation.UWP.Objects.UI;
 using Federation.UWP.Views;
 
@@ -39,6 +40,15 @@ namespace Federation.UWP.ViewModel
             SelectedNavigationItem = _pages.FirstOrDefault(p => p.Tag.Equals(tagName));
 
             return SelectedNavigationItem != null;
+        }
+
+        private MainGameItem _gameItem;
+
+        public MainGameItem GameItem => _gameItem;
+
+        public void SetGame(MainGameItem gameItem)
+        {
+            _gameItem = gameItem;
         }
     }
 }

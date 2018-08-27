@@ -124,8 +124,11 @@
     <Compile Include="Controls\GalaxyMapItemControl.xaml.cs">
       <DependentUpon>GalaxyMapItemControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Enums\GameSize.cs" />
     <Compile Include="Enums\LocalizedStrings.cs" />
     <Compile Include="Enums\Race.cs" />
+    <Compile Include="Objects\Game\GalaxyMapItem.cs" />
+    <Compile Include="Objects\Game\MainGameItem.cs" />
     <Compile Include="Objects\UI\NavigationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
