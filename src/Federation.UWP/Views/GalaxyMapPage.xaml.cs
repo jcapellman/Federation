@@ -1,7 +1,8 @@
 ﻿using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 using Federation.UWP.Controls;
-using Federation.UWP.Enums;
+using Federation.UWP.Objects.Game;
 
 namespace Federation.UWP.Views
 {
@@ -10,12 +11,24 @@ namespace Federation.UWP.Views
         public GalaxyMapPage()
         {
             InitializeComponent();
+        }
 
-            for (var x = 0; x < 25; x++)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            ugMap.Children.Clear();
+
+            var gameItem = (MainGameItem) e.Parameter;
+
+            if (gameItem == null)
+            {
+                return;
+            }
+
+            foreach (var galaxyMapItem in gameItem.GalaxyMapItems)
             {
                 ugMap.Children.Add(new GalaxyMapItemControl
                 {
-                    SelectedRace = Race.Cardassian
+                    SelectedRace = galaxyMapItem.Race
                 });
             }
         }
