@@ -1,5 +1,7 @@
 ﻿using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
+using Federation.UWP.Objects.Game;
 using Federation.UWP.ViewModel;
 
 using NavigationView = Windows.UI.Xaml.Controls.NavigationView;
@@ -19,6 +21,13 @@ namespace Federation.UWP.Views
             Loaded += MainPage_Loaded;
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            ViewModel.SetGame((MainGameItem)e.Parameter);
+
+            base.OnNavigatedTo(e);
+        }
+
         private void MainPage_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             nvMain.IsPaneOpen = false;
@@ -35,7 +44,7 @@ namespace Federation.UWP.Views
                 return;
             }
 
-            mainContent.Navigate(ViewModel.SelectedNavigationItem.PageType);
+            mainContent.Navigate(ViewModel.SelectedNavigationItem.PageType, ViewModel.GameItem);
         }
 
         private void NavigationView_OnSelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
