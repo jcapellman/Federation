@@ -183,6 +183,7 @@
     <Content Include="Assets\Races\Klingon_Profile.jpg" />
     <Content Include="Assets\Races\Romulan.png" />
     <Content Include="Assets\Races\Romulan_Profile.jpg" />
+    <Content Include="Assets\Races\Unknown.png" />
     <Content Include="Assets\Sfx\beep.wav" />
     <Content Include="Assets\Ships\CARDASSIAN_Galor.png" />
     <Content Include="Assets\Ships\FEDERATION_Akira.png" />

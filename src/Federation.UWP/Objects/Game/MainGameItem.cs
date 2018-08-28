@@ -18,8 +18,8 @@ namespace Federation.UWP.Objects.Game
             {
                 GalaxyMapItems.Add(new GalaxyMapItem
                 {
-                    Race = Race.Federation,
-                    SystemName = "SOL"
+                    Race = Race.Unknown,
+                    SystemName = "Unknown"
                 });
             }
         }
