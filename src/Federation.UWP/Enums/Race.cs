@@ -5,6 +5,7 @@
         Cardassian,
         Romulan,
         Klingon,
-        Federation
+        Federation,
+        Unknown
     }
 }
