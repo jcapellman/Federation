@@ -12,14 +12,21 @@ namespace Federation.UWP.Objects.Game
 
         public MainGameItem(GameSize gameSize)
         {
-            GalaxyMapItems = new List<GalaxyMapItem>();
-
-            for (var x = 0; x < (int) gameSize; x++)
+            GalaxyMapItems = new List<GalaxyMapItem>
+            {
+                new GalaxyMapItem
+                {
+                    Race = Race.Federation,
+                    SystemName = Common.Constants.FEDERATION_GAMESTART_SYSTEM
+                }
+            };
+            
+            for (var x = 1; x < (int) gameSize; x++)
             {
                 GalaxyMapItems.Add(new GalaxyMapItem
                 {
                     Race = Race.Unknown,
-                    SystemName = "Unknown"
+                    SystemName = Common.Constants.GAMESTART_UNKNOWN_SYSTEM
                 });
             }
         }
