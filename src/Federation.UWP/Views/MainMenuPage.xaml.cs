@@ -1,7 +1,6 @@
 ﻿using Windows.UI.Xaml.Controls;
 
-using Federation.UWP.Enums;
-using Federation.UWP.Objects.Game;
+using Federation.UWP.ViewModel;
 
 namespace Federation.UWP.Views
 {
@@ -11,14 +10,7 @@ namespace Federation.UWP.Views
         {
             InitializeComponent();
 
-            Loaded += MainMenuPage_Loaded;
-        }
-
-        private void MainMenuPage_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            var game = new MainGameItem(GameSize.TINY);
-            
-            Frame.Navigate(typeof(MainPage), game);
+            DataContext = new MainMenuPageViewModel();
         }
     }
 }

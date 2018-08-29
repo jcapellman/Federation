@@ -6,9 +6,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    MinWidth="1024"
+    MinHeight="768"
+    Background="Black"
+    >
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Assets/SplashScreen.scale-200.png"/>
+        </Grid.Background>
 
+        <StackPanel Style="{StaticResource MainButtonStackPanelStyle}">
+            <Button Style="{StaticResource MainMenuButtonStyle}" Content="New Game" Command="{Binding NewGameCommand}" CommandParameter="{Binding this}" />
+            <Button Style="{StaticResource MainMenuButtonStyle}" Content="Load Game" />
+            <Button Style="{StaticResource MainMenuButtonStyle}" Content="Options" />
+            <Button Style="{StaticResource MainMenuButtonStyle}" Content="About" />
+        </StackPanel>
     </Grid>
 </Page>
