@@ -7,5 +7,19 @@
     <Style x:Key="TextBlockHeaderStyle" TargetType="TextBlock">
         <Setter Property="FontSize" Value="55" />
         <Setter Property="FontFamily" Value="{StaticResource MainLCARS}" />
-    </Style> 
+    </Style>
+    
+    <Style x:Key="MainButtonStackPanelStyle" TargetType="StackPanel">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Margin" Value="10,0,10,10" />
+        <Setter Property="Orientation" Value="Horizontal" />
+    </Style>
+    
+    <Style x:Key="MainMenuButtonStyle" TargetType="Button">
+        <Setter Property="Width" Value="200" />
+        <Setter Property="Height" Value="50" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="0,0,5,0" />
+    </Style>
 </ResourceDictionary>
