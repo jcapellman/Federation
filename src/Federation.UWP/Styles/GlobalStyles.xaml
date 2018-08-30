@@ -22,4 +22,10 @@
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Margin" Value="0,0,5,0" />
     </Style>
+
+    <Style x:Key="PageStyle" TargetType="Page">
+        <Setter Property="MinWidth" Value="1024" />
+        <Setter Property="MinHeight" Value="768" />
+        <Setter Property="Background" Value="Black" />
+    </Style>
 </ResourceDictionary>
