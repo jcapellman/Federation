@@ -15,7 +15,13 @@
         <Setter Property="Margin" Value="10,0,10,10" />
         <Setter Property="Orientation" Value="Horizontal" />
     </Style>
-    
+
+    <Style x:Key="MainButtonGroupGridStyle" TargetType="Grid">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Margin" Value="10,0,10,10" />
+    </Style>
+
     <Style x:Key="MainMenuButtonStyle" TargetType="Button">
         <Setter Property="Width" Value="200" />
         <Setter Property="Height" Value="50" />
@@ -27,5 +33,9 @@
         <Setter Property="MinWidth" Value="1024" />
         <Setter Property="MinHeight" Value="768" />
         <Setter Property="Background" Value="Black" />
+    </Style>
+
+    <Style x:Key="MainMenuHeaderGridStyle" TargetType="Grid">
+        <Setter Property="Margin" Value="10,10,10,10" />
     </Style>
 </ResourceDictionary>
