@@ -1,4 +1,6 @@
-﻿using Windows.UI.Xaml;
+﻿using System.Linq;
+
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
@@ -25,11 +27,22 @@ namespace Federation.UWP.Views.MainMenu
 
             foreach (var race in ExtensionMethods.RaceList)
             {
-                ugRaces.Children.Add(new RaceSelectionItemControl
+                var item = new RaceSelectionItemControl
                 {
                     SelectedRace = race
-                });
+                };
+
+                item.Tapped += raceSelectionItemControl_Tapped;
+
+                ugRaces.Children.Add(item);
             }
+
+            ViewModel.SetRace(ExtensionMethods.RaceList.FirstOrDefault());
+        }
+
+        private void raceSelectionItemControl_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            ViewModel.SetRace(((RaceSelectionItemControl) sender).SelectedRace);
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
