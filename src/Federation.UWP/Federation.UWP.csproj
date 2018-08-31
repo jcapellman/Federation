@@ -131,9 +131,11 @@
     <Compile Include="Objects\Game\GalaxyMapItem.cs" />
     <Compile Include="Objects\Game\MainGameItem.cs" />
     <Compile Include="Objects\UI\NavigationItem.cs" />
+    <Compile Include="Objects\UI\RaceSelectionItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
+    <Compile Include="ViewModel\Menu\NewGameViewModel.cs" />
     <Compile Include="Views\GalaxyMapPage.xaml.cs">
       <DependentUpon>GalaxyMapPage.xaml</DependentUpon>
     </Compile>
