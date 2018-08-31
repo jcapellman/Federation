@@ -1,8 +1,7 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-using Federation.UWP.Enums;
-using Federation.UWP.Objects.Game;
+using Federation.UWP.Views.MainMenu;
 
 namespace Federation.UWP.Views
 {
@@ -15,22 +14,22 @@ namespace Federation.UWP.Views
 
         private void btnNewGame_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage), new MainGameItem(GameSize.TINY));
+            Frame.Navigate(typeof(NewGamePage));
         }
 
         private void btnLoadGame_Click(object sender, RoutedEventArgs e)
         {
-            
+            Frame.Navigate(typeof(LoadGamePage));
         }
 
         private void btnOptions_Click(object sender, RoutedEventArgs e)
         {
-            
+            Frame.Navigate(typeof(OptionsPage));
         }
 
         private void btnAbout_Click(object sender, RoutedEventArgs e)
         {
-            
+            Frame.Navigate(typeof(AboutPage));
         }
     }
 }
