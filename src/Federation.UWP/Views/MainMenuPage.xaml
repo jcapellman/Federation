@@ -15,10 +15,10 @@
         </Grid.Background>
 
         <StackPanel Style="{StaticResource MainButtonStackPanelStyle}">
-            <Button Style="{StaticResource MainMenuButtonStyle}" Content="New Game" Command="{Binding NewGameCommand}" CommandParameter="{Binding this}" />
-            <Button Style="{StaticResource MainMenuButtonStyle}" Content="Load Game" />
-            <Button Style="{StaticResource MainMenuButtonStyle}" Content="Options" />
-            <Button Style="{StaticResource MainMenuButtonStyle}" Content="About" />
+            <Button Style="{StaticResource MainMenuButtonStyle}" Content="New Game" Click="btnNewGame_Click" />
+            <Button Style="{StaticResource MainMenuButtonStyle}" Content="Load Game" Click="btnLoadGame_Click" />
+            <Button Style="{StaticResource MainMenuButtonStyle}" Content="Options" Click="btnOptions_Click" />
+            <Button Style="{StaticResource MainMenuButtonStyle}" Content="About" Click="btnAbout_Click" />
         </StackPanel>
     </Grid>
 </Page>
