@@ -5,6 +5,7 @@
     xmlns:local="using:Federation.UWP.Views.MainMenu"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
     Style="{StaticResource PageStyle}">
 
@@ -32,32 +33,12 @@
             <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition MinHeight="256" Height="*" />
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Text="Race Selection" Style="{StaticResource HeaderTextBlockStyle}" />
 
-                <ListView Grid.Row="1" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Races}" ShowsScrollingPlaceholders="True">
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal" />
-                        </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>
-
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-
-                                <Image Grid.Row="0" Source="{Binding Image}" />
-                                <TextBlock Grid.Row="1" Text="{Binding Name}" />
-                            </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                <controls:UniformGrid x:Name="ugRaces" Grid.Row="1" Columns="4" />
             </Grid>
 
             <ComboBox Grid.Row="1" Header="Map Size" ItemsSource="{Binding MapSizeOptions}" />
