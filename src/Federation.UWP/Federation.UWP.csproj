@@ -120,7 +120,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Common\ExtensionMethods.cs" />
     <Compile Include="Controls\GalaxyMapItemControl.xaml.cs">
@@ -134,7 +133,6 @@
     <Compile Include="Objects\UI\NavigationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
-    <Compile Include="ViewModel\MainMenuPageViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="Views\GalaxyMapPage.xaml.cs">
       <DependentUpon>GalaxyMapPage.xaml</DependentUpon>
