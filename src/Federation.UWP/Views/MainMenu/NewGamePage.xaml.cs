@@ -49,5 +49,10 @@ namespace Federation.UWP.Views.MainMenu
         {
             Frame.GoBack();
         }
+
+        private void btnStartGame_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage), ViewModel.BuildGameObject());
+        }
     }
 }
