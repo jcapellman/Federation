@@ -41,7 +41,7 @@
                 <controls:UniformGrid x:Name="ugRaces" Grid.Row="1" Columns="4" />
             </Grid>
 
-            <ComboBox Grid.Row="1" Header="Game Size" ItemsSource="{Binding GameSizeOptions}" SelectedItem="{Binding SelectedGameSize, Mode=TwoWay}" />
+            <ComboBox Grid.Row="1" Header="Game Size" HorizontalAlignment="Center" ItemsSource="{Binding GameSizeOptions}" SelectedItem="{Binding SelectedGameSize, Mode=TwoWay}" />
         </Grid>
 
         <Grid Grid.Row="2" Style="{StaticResource MainButtonGroupGridStyle}">
