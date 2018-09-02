@@ -30,6 +30,8 @@ namespace Federation.UWP.ViewModel.Menu
         public NewGameViewModel()
         {
             GameSizeOptions = Enum.GetNames(typeof(Enums.GameSize)).ToList();
+
+            SelectedGameSize = GameSizeOptions.FirstOrDefault();
         }
 
         private Race _selectedRace;
