@@ -9,6 +9,32 @@
     Style="{StaticResource PageStyle}">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Uniform" Opacity="0.5" ImageSource="ms-appx:///Assets/Backgrounds/About.jpg"/>
+        </Grid.Background>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Style="{StaticResource MainMenuHeaderGridStyle}">
+            <TextBlock Text="About" Style="{StaticResource TextBlockHeaderStyle}" />
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="10,10,10,10">
+            <TextBlock HorizontalAlignment="Center" Text="No Games yet..." VerticalAlignment="Center" Foreground="White" />
+        </Grid>
+
+        <Grid Grid.Row="2" Style="{StaticResource MainButtonGroupGridStyle}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Style="{StaticResource MainMenuButtonStyle}" Content="Back" Click="btnBack_Click"  />
+            <Button Grid.Column="1" Style="{StaticResource MainMenuButtonStyle}" Content="Load"  />
+        </Grid>
     </Grid>
 </Page>

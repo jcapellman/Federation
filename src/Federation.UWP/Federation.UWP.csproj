@@ -181,7 +181,10 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="Federation.UWP_TemporaryKey.pfx" />
+    <Content Include="Assets\Backgrounds\About.jpg" />
+    <Content Include="Assets\Backgrounds\LoadGame.jpg" />
     <Content Include="Assets\Backgrounds\NewGame.jpg" />
+    <Content Include="Assets\Backgrounds\Options.jpg" />
     <Content Include="Assets\Backgrounds\Research.jpg" />
     <Content Include="Assets\Backgrounds\Resources.jpg" />
     <Content Include="Assets\Backgrounds\Shipyards.jpg" />
