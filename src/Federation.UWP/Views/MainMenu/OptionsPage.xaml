@@ -5,10 +5,37 @@
     xmlns:local="using:Federation.UWP.Views.MainMenu"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
     Style="{StaticResource PageStyle}">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Uniform" Opacity="0.5" ImageSource="ms-appx:///Assets/Backgrounds/Options.jpg"/>
+        </Grid.Background>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Style="{StaticResource MainMenuHeaderGridStyle}">
+            <TextBlock Text="Options" Style="{StaticResource TextBlockHeaderStyle}" />
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="10,10,10,10">
+            <TextBlock HorizontalAlignment="Center" Text="No Options yet..." VerticalAlignment="Center" Foreground="White" />
+        </Grid>
+
+        <Grid Grid.Row="2" Style="{StaticResource MainButtonGroupGridStyle}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Style="{StaticResource MainMenuButtonStyle}" Content="Back" Click="btnBack_Click"  />
+            <Button Grid.Column="1" Style="{StaticResource MainMenuButtonStyle}" Content="Save" Click="btnSave_Click" />
+        </Grid>
     </Grid>
 </Page>
