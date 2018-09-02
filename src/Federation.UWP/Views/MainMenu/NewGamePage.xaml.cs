@@ -42,7 +42,14 @@ namespace Federation.UWP.Views.MainMenu
 
         private void raceSelectionItemControl_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
-            ViewModel.SetRace(((RaceSelectionItemControl) sender).SelectedRace);
+            var selectedItem = (RaceSelectionItemControl) sender;
+
+            foreach (var item in ugRaces.Children.Where(a => a != sender))
+            {
+                ((RaceSelectionItemControl) item).Toggled = false;
+            }
+
+            ViewModel.SetRace(selectedItem.SelectedRace);
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
