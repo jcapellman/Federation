@@ -8,15 +8,19 @@ namespace Federation.UWP.Objects.Game
     {
         public GameSize GameSize { get; set; }
 
+        public Race PlayerRace { get; set; }
+
         public List<GalaxyMapItem> GalaxyMapItems { get; set; }
 
-        public MainGameItem(GameSize gameSize)
+        public MainGameItem(GameSize gameSize, Race playerRace)
         {
+            PlayerRace = playerRace;
+
             GalaxyMapItems = new List<GalaxyMapItem>
             {
                 new GalaxyMapItem
                 {
-                    Race = Race.Federation,
+                    Race = playerRace,
                     SystemName = Common.Constants.FEDERATION_GAMESTART_SYSTEM
                 }
             };
