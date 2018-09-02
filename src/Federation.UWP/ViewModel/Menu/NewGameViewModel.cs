@@ -41,13 +41,6 @@ namespace Federation.UWP.ViewModel.Menu
             _selectedRace = race;
         }
 
-        public MainGameItem BuildGameObject()
-        {
-            var gameItem = new MainGameItem((GameSize)Enum.Parse(typeof(GameSize), SelectedGameSize));
-
-            // TODO Set Selected Race here
-
-            return gameItem;
-        }
+        public MainGameItem BuildGameObject() => new MainGameItem((GameSize)Enum.Parse(typeof(GameSize), SelectedGameSize), _selectedRace);
     }
 }
