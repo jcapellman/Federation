@@ -27,6 +27,15 @@ namespace Federation.UWP.Controls
             }
         }
 
+        public bool Toggled
+        {
+            get => tbMain.IsChecked ?? false;
+
+            set => tbMain.IsChecked = value;
+        }
+
+        public static readonly DependencyProperty ToggledProperty = DependencyProperty.Register("Toggled", typeof(bool), typeof(GalaxyMapItemControl), new PropertyMetadata(false));
+
         public static readonly DependencyProperty RaceProperty = DependencyProperty.Register("SelectedRace", typeof(Race), typeof(GalaxyMapItemControl), new PropertyMetadata(Race.Federation));
     }
 }
