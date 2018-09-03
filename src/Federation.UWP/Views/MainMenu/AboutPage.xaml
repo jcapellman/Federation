@@ -24,7 +24,7 @@
         </Grid>
 
         <Grid Grid.Row="1" Margin="10,10,10,10">
-            <TextBlock HorizontalAlignment="Center" Text="No Games yet..." VerticalAlignment="Center" Foreground="White" />
+            <TextBlock HorizontalAlignment="Center" Text="" VerticalAlignment="Center" Foreground="White" />
         </Grid>
 
         <Grid Grid.Row="2" Style="{StaticResource MainButtonGroupGridStyle}">
