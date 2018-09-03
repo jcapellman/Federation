@@ -25,7 +25,7 @@ namespace Federation.UWP.Views.MainMenu
         {
             ugFactions.Children.Clear();
 
-            foreach (var faction in ExtensionMethods.RaceList)
+            foreach (var faction in ExtensionMethods.FactionList)
             {
                 var item = new FactionSelectionItemControl
                 {
@@ -37,7 +37,7 @@ namespace Federation.UWP.Views.MainMenu
                 ugFactions.Children.Add(item);
             }
 
-            ViewModel.SetFaction(ExtensionMethods.RaceList.FirstOrDefault());
+            ViewModel.SetFaction(ExtensionMethods.FactionList.FirstOrDefault());
         }
 
         private void factionSelectionItemControl_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)

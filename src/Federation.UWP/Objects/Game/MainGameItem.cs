@@ -43,7 +43,7 @@ namespace Federation.UWP.Objects.Game
 
             FactionStates = new List<FactionStateGameItem>();
 
-            foreach (var faction in ExtensionMethods.RaceList)
+            foreach (var faction in ExtensionMethods.FactionList)
             {
                 var factionStateItem = new FactionStateGameItem
                 {
