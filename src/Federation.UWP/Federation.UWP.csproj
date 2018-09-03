@@ -157,8 +157,8 @@
     <Compile Include="Views\MainMenu\OptionsPage.xaml.cs">
       <DependentUpon>OptionsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="Views\MainGamePage.xaml.cs">
+      <DependentUpon>MainGamePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Game\ResearchPage.xaml.cs">
       <DependentUpon>ResearchPage.xaml</DependentUpon>
@@ -286,7 +286,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainPage.xaml">
+    <Page Include="Views\MainGamePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
