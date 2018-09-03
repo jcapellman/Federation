@@ -10,11 +10,11 @@ using NavigationViewItem = Windows.UI.Xaml.Controls.NavigationViewItem;
 
 namespace Federation.UWP.Views
 {
-    public sealed partial class MainPage : Page
+    public sealed partial class MainGamePage : Page
     {
         private MainPageViewModel ViewModel => (MainPageViewModel) DataContext;
 
-        public MainPage()
+        public MainGamePage()
         {
             InitializeComponent();
 

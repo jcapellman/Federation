@@ -5,6 +5,7 @@ using Federation.UWP.Enums;
 using Federation.UWP.Objects.Game;
 using Federation.UWP.Objects.UI;
 using Federation.UWP.Views;
+using Federation.UWP.Views.Game;
 
 namespace Federation.UWP.ViewModel
 {

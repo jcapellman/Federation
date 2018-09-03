@@ -1,10 +1,9 @@
 ﻿using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-
 using Federation.UWP.Controls;
 using Federation.UWP.Objects.Game;
 
-namespace Federation.UWP.Views
+namespace Federation.UWP.Views.Game
 {
     public sealed partial class GalaxyMapPage : Page
     {

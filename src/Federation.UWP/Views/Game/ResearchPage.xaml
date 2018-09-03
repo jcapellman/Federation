@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Federation.UWP.Views.ResourcesPage"
+    x:Class="Federation.UWP.Views.Game.ResearchPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Federation.UWP.Views"
@@ -9,7 +9,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" Opacity=".5" ImageSource="ms-appx:///Assets/Backgrounds/Resources.jpg"/>
+            <ImageBrush Stretch="UniformToFill" Opacity=".5" ImageSource="ms-appx:///Assets/Backgrounds/Research.jpg"/>
         </Grid.Background>
 
         <Grid.RowDefinitions>
