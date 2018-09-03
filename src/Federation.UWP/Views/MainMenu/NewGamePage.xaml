@@ -36,9 +36,9 @@
                     <RowDefinition MinHeight="256" Height="*" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Text="Race Selection" Style="{StaticResource HeaderTextBlockStyle}" />
+                <TextBlock Grid.Row="0" Text="Faction Selection" Style="{StaticResource HeaderTextBlockStyle}" />
 
-                <controls:UniformGrid x:Name="ugRaces" Grid.Row="1" Columns="4" />
+                <controls:UniformGrid x:Name="ugFactions" Grid.Row="1" Columns="4" />
             </Grid>
 
             <ComboBox Grid.Row="1" Header="Game Size" HorizontalAlignment="Center" ItemsSource="{Binding GameSizeOptions}" SelectedItem="{Binding SelectedGameSize, Mode=TwoWay}" />

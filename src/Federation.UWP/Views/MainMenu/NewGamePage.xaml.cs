@@ -16,40 +16,40 @@ namespace Federation.UWP.Views.MainMenu
 
         public NewGamePage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             DataContext = new NewGameViewModel();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            ugRaces.Children.Clear();
+            ugFactions.Children.Clear();
 
-            foreach (var race in ExtensionMethods.RaceList)
+            foreach (var faction in ExtensionMethods.RaceList)
             {
-                var item = new RaceSelectionItemControl
+                var item = new FactionSelectionItemControl
                 {
-                    SelectedRace = race
+                    SelectedFaction = faction
                 };
 
-                item.Tapped += raceSelectionItemControl_Tapped;
+                item.Tapped += factionSelectionItemControl_Tapped;
 
-                ugRaces.Children.Add(item);
+                ugFactions.Children.Add(item);
             }
 
-            ViewModel.SetRace(ExtensionMethods.RaceList.FirstOrDefault());
+            ViewModel.SetFaction(ExtensionMethods.RaceList.FirstOrDefault());
         }
 
-        private void raceSelectionItemControl_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        private void factionSelectionItemControl_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
-            var selectedItem = (RaceSelectionItemControl) sender;
+            var selectedItem = (FactionSelectionItemControl) sender;
 
-            foreach (var item in ugRaces.Children.Where(a => a != sender))
+            foreach (var item in ugFactions.Children.Where(a => a != sender))
             {
-                ((RaceSelectionItemControl) item).Toggled = false;
+                ((FactionSelectionItemControl) item).Toggled = false;
             }
 
-            ViewModel.SetRace(selectedItem.SelectedRace);
+            ViewModel.SetFaction(selectedItem.SelectedFaction);
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

@@ -8,21 +8,21 @@ using Federation.UWP.Enums;
 
 namespace Federation.UWP.Controls
 {
-    public sealed partial class RaceSelectionItemControl : UserControl
+    public sealed partial class FactionSelectionItemControl : UserControl
     {
-        public RaceSelectionItemControl()
+        public FactionSelectionItemControl()
         {
             this.InitializeComponent();
         }
 
-        public Race SelectedRace
+        public Faction SelectedFaction
         {
-            get => (Race)GetValue(RaceProperty);
+            get => (Faction)GetValue(FactionProperty);
             set
             {
-                SetValue(RaceProperty, value);
+                SetValue(FactionProperty, value);
 
-                imgRace.Source = new BitmapImage(new Uri($"ms-appx:///Assets/Races/{value}.png"));
+                imgFaction.Source = new BitmapImage(new Uri($"ms-appx:///Assets/Factions/{value}.png"));
                 tbName.Text = value.ToString();
             }
         }
@@ -36,6 +36,6 @@ namespace Federation.UWP.Controls
 
         public static readonly DependencyProperty ToggledProperty = DependencyProperty.Register("Toggled", typeof(bool), typeof(GalaxyMapItemControl), new PropertyMetadata(false));
 
-        public static readonly DependencyProperty RaceProperty = DependencyProperty.Register("SelectedRace", typeof(Race), typeof(GalaxyMapItemControl), new PropertyMetadata(Race.Federation));
+        public static readonly DependencyProperty FactionProperty = DependencyProperty.Register("SelectedFaction", typeof(Faction), typeof(GalaxyMapItemControl), new PropertyMetadata(Faction.Federation));
     }
 }

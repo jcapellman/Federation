@@ -10,6 +10,6 @@ namespace Federation.UWP.Common
     {
         public static string ToLocalizedString(this LocalizedStrings name) => Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView().GetString(name.ToString());
 
-        public static IEnumerable<Race> RaceList => Enum.GetNames(typeof(Race)).Where(a => a != Race.Unknown.ToString()).Select(a => (Race)Enum.Parse(typeof(Race), a));
+        public static IEnumerable<Faction> RaceList => Enum.GetNames(typeof(Faction)).Where(a => a != Faction.Unknown.ToString()).Select(a => (Faction)Enum.Parse(typeof(Faction), a));
     }
 }

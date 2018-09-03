@@ -10,18 +10,18 @@ namespace Federation.UWP.Controls
 {
     public sealed partial class GalaxyMapItemControl : UserControl
     {
-        public Race SelectedRace
+        public Faction SelectedFaction
         {
-            get => (Race) GetValue(RaceProperty);
+            get => (Faction) GetValue(FactionProperty);
             set
             {
-                SetValue(RaceProperty, value);
+                SetValue(FactionProperty, value);
 
-                imgRace.Source = new BitmapImage(new Uri($"ms-appx:///Assets/Races/{value}.png"));
+                imgRace.Source = new BitmapImage(new Uri($"ms-appx:///Assets/Factions/{value}.png"));
             }
         }
 
-        public static readonly DependencyProperty RaceProperty = DependencyProperty.Register("SelectedRace", typeof(Race), typeof(GalaxyMapItemControl), new PropertyMetadata(Race.Federation));
+        public static readonly DependencyProperty FactionProperty = DependencyProperty.Register("SelectedFaction", typeof(Faction), typeof(GalaxyMapItemControl), new PropertyMetadata(Faction.Federation));
 
         public GalaxyMapItemControl()
         {

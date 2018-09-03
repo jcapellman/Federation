@@ -43,13 +43,11 @@ namespace Federation.UWP.ViewModel
             return SelectedNavigationItem != null;
         }
 
-        private MainGameItem _gameItem;
-
-        public MainGameItem GameItem => _gameItem;
+        public MainGameItem GameItem { get; private set; }
 
         public void SetGame(MainGameItem gameItem)
         {
-            _gameItem = gameItem;
+            GameItem = gameItem;
         }
     }
 }

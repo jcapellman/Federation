@@ -34,13 +34,13 @@ namespace Federation.UWP.ViewModel.Menu
             SelectedGameSize = GameSizeOptions.FirstOrDefault();
         }
 
-        private Race _selectedRace;
+        private Faction _selectedFaction;
 
-        public void SetRace(Race race)
+        public void SetFaction(Faction faction)
         {
-            _selectedRace = race;
+            _selectedFaction = faction;
         }
 
-        public MainGameItem BuildGameObject() => new MainGameItem((GameSize)Enum.Parse(typeof(GameSize), SelectedGameSize), _selectedRace);
+        public MainGameItem BuildGameObject() => new MainGameItem((GameSize)Enum.Parse(typeof(GameSize), SelectedGameSize), _selectedFaction);
     }
 }

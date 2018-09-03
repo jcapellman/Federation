@@ -27,7 +27,7 @@ namespace Federation.UWP.Views.Game
             {
                 ugMap.Children.Add(new GalaxyMapItemControl
                 {
-                    SelectedRace = galaxyMapItem.Race
+                    SelectedFaction = galaxyMapItem.Faction
                 });
             }
         }

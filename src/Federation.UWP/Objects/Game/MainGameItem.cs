@@ -8,19 +8,19 @@ namespace Federation.UWP.Objects.Game
     {
         public GameSize GameSize { get; set; }
 
-        public Race PlayerRace { get; set; }
+        public Faction PlayerFaction { get; set; }
 
         public List<GalaxyMapItem> GalaxyMapItems { get; set; }
 
-        public MainGameItem(GameSize gameSize, Race playerRace)
+        public MainGameItem(GameSize gameSize, Faction playerFaction)
         {
-            PlayerRace = playerRace;
+            PlayerFaction = playerFaction;
 
             GalaxyMapItems = new List<GalaxyMapItem>
             {
                 new GalaxyMapItem
                 {
-                    Race = playerRace,
+                    Faction = playerFaction,
                     SystemName = Common.Constants.FEDERATION_GAMESTART_SYSTEM
                 }
             };
@@ -29,7 +29,7 @@ namespace Federation.UWP.Objects.Game
             {
                 GalaxyMapItems.Add(new GalaxyMapItem
                 {
-                    Race = Race.Unknown,
+                    Faction = Faction.Unknown,
                     SystemName = Common.Constants.GAMESTART_UNKNOWN_SYSTEM
                 });
             }

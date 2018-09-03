@@ -1,6 +1,6 @@
 ﻿namespace Federation.UWP.Enums
 {
-    public enum Race
+    public enum Faction
     {
         Cardassian,
         Romulan,
