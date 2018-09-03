@@ -9,5 +9,7 @@ namespace Federation.UWP.Objects.Game
         public int DilithiumCrystals { get; set; }
 
         public int Credits { get; set; }
+
+        public int ResearchLevel { get; set; }
     }
 }
