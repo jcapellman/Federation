@@ -139,7 +139,7 @@
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\Menu\NewGameViewModel.cs" />
-    <Compile Include="Views\GalaxyMapPage.xaml.cs">
+    <Compile Include="Views\Game\GalaxyMapPage.xaml.cs">
       <DependentUpon>GalaxyMapPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainMenuPage.xaml.cs">
@@ -160,19 +160,19 @@
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ResearchPage.xaml.cs">
+    <Compile Include="Views\Game\ResearchPage.xaml.cs">
       <DependentUpon>ResearchPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ResourcesPage.xaml.cs">
+    <Compile Include="Views\Game\ResourcesPage.xaml.cs">
       <DependentUpon>ResourcesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SaveGamePage.xaml.cs">
+    <Compile Include="Views\Game\SaveGamePage.xaml.cs">
       <DependentUpon>SaveGamePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ShipyardsPage.xaml.cs">
+    <Compile Include="Views\Game\ShipyardsPage.xaml.cs">
       <DependentUpon>ShipyardsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TerritoryPage.xaml.cs">
+    <Compile Include="Views\Game\TerritoryPage.xaml.cs">
       <DependentUpon>TerritoryPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -262,7 +262,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\GalaxyMapPage.xaml">
+    <Page Include="Views\Game\GalaxyMapPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -290,23 +290,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ResearchPage.xaml">
+    <Page Include="Views\Game\ResearchPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ResourcesPage.xaml">
+    <Page Include="Views\Game\ResourcesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SaveGamePage.xaml">
+    <Page Include="Views\Game\SaveGamePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ShipyardsPage.xaml">
+    <Page Include="Views\Game\ShipyardsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TerritoryPage.xaml">
+    <Page Include="Views\Game\TerritoryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
