@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+using Federation.UWP.Common;
 using Federation.UWP.Enums;
 
 namespace Federation.UWP.Objects.Game
@@ -12,9 +13,15 @@ namespace Federation.UWP.Objects.Game
 
         public List<GalaxyMapItem> GalaxyMapItems { get; set; }
 
+        public List<FactionStateGameItem> FactionStates { get; set; }
+
+        public int TurnNumber { get; set; }
+
         public MainGameItem(GameSize gameSize, Faction playerFaction)
         {
             PlayerFaction = playerFaction;
+
+            TurnNumber = 1;
 
             GalaxyMapItems = new List<GalaxyMapItem>
             {
@@ -32,6 +39,21 @@ namespace Federation.UWP.Objects.Game
                     Faction = Faction.Unknown,
                     SystemName = Common.Constants.GAMESTART_UNKNOWN_SYSTEM
                 });
+            }
+
+            FactionStates = new List<FactionStateGameItem>();
+
+            foreach (var faction in ExtensionMethods.RaceList)
+            {
+                var factionStateItem = new FactionStateGameItem
+                {
+                    Credits = 1000,
+                    DilithiumCrystals = 100,
+                    Faction = faction,
+                    ResearchLevel = 1
+                };
+
+                FactionStates.Add(factionStateItem);
             }
         }
     }
