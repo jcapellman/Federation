@@ -1,6 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 
+using Windows.UI.Xaml;
+
 using Federation.UWP.DAL;
 using Federation.UWP.Objects.Game;
 
@@ -19,6 +21,8 @@ namespace Federation.UWP.ViewModel.Menu
                 _gameItems = value;
 
                 OnPropertyChanged();
+
+                GameItemsVisible = (value.Any() ? Visibility.Visible : Visibility.Collapsed);
             }
         }
 
@@ -36,17 +40,39 @@ namespace Federation.UWP.ViewModel.Menu
             }
         }
 
-        private bool _LoadGameButtonEnabled;
+        private bool _loadGameButtonEnabled;
 
         public bool LoadGameButtonEnabled
         {
-            get => _LoadGameButtonEnabled;
+            get => _loadGameButtonEnabled;
 
             set
             {
-                _LoadGameButtonEnabled = value;
+                _loadGameButtonEnabled = value;
                 OnPropertyChanged();
             }
+        }
+
+        private Visibility _gameItemsVisible;
+
+        public Visibility GameItemsVisible
+        {
+            get => _gameItemsVisible;
+
+            set {
+                _gameItemsVisible = value;
+                OnPropertyChanged();
+                NoGameTextVisible = (value == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed);
+            }
+        }
+
+        private Visibility _noGameTextVisible;
+
+        public Visibility NoGameTextVisible
+        {
+            get => _noGameTextVisible;
+
+            set { _noGameTextVisible = value; OnPropertyChanged(); }
         }
 
         public LoadGameViewModel()

@@ -24,7 +24,14 @@
         </Grid>
 
         <Grid Grid.Row="1" Margin="10,10,10,10">
-            <ListView ItemsSource="{Binding GameItems}" SelectedItem="{Binding SelectedGameItem, Mode=TwoWay}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="No Games Found" Visibility="{Binding NoGameTextVisible, Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+            <ListView Grid.Row="1" ItemsSource="{Binding GameItems}" Visibility="{Binding GameItemsVisible, Mode=TwoWay}" SelectedItem="{Binding SelectedGameItem, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
