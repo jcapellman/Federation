@@ -24,7 +24,7 @@
         </Grid>
 
         <Grid Grid.Row="1" Margin="10,10,10,10">
-            <ListView>
+            <ListView ItemsSource="{Binding GameItems}" SelectedItem="{Binding SelectedGameItem, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -50,7 +50,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="0" Style="{StaticResource MainMenuButtonStyle}" Content="Back" Click="btnBack_Click"  />
-            <Button Grid.Column="1" Style="{StaticResource MainMenuButtonStyle}" Content="Load"  />
+            <Button Grid.Column="1" Style="{StaticResource MainMenuButtonStyle}" Content="Load" Click="btnLoadGame_Click"  />
         </Grid>
     </Grid>
 </Page>
