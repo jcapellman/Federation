@@ -141,6 +141,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
+    <Compile Include="ViewModel\Menu\LoadGameViewModel.cs" />
     <Compile Include="ViewModel\Menu\NewGameViewModel.cs" />
     <Compile Include="Views\Game\GalaxyMapPage.xaml.cs">
       <DependentUpon>GalaxyMapPage.xaml</DependentUpon>
