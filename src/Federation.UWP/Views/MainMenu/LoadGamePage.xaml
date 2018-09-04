@@ -50,7 +50,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="0" Style="{StaticResource MainMenuButtonStyle}" Content="Back" Click="btnBack_Click"  />
-            <Button Grid.Column="1" Style="{StaticResource MainMenuButtonStyle}" Content="Load" Click="btnLoadGame_Click"  />
+            <Button Grid.Column="1" Style="{StaticResource MainMenuButtonStyle}" IsEnabled="{Binding LoadGameButtonEnabled, Mode=TwoWay}"  Content="Load" Click="btnLoadGame_Click"  />
         </Grid>
     </Grid>
 </Page>

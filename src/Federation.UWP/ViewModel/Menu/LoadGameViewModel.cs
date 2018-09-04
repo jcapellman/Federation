@@ -28,7 +28,25 @@ namespace Federation.UWP.ViewModel.Menu
         {
             get => _selectedGameItem;
 
-            set { _selectedGameItem = value; OnPropertyChanged(); }
+            set
+            {
+                _selectedGameItem = value;
+                OnPropertyChanged();
+                LoadGameButtonEnabled = value != null;
+            }
+        }
+
+        private bool _LoadGameButtonEnabled;
+
+        public bool LoadGameButtonEnabled
+        {
+            get => _LoadGameButtonEnabled;
+
+            set
+            {
+                _LoadGameButtonEnabled = value;
+                OnPropertyChanged();
+            }
         }
 
         public LoadGameViewModel()
@@ -37,6 +55,8 @@ namespace Federation.UWP.ViewModel.Menu
 
             if (!GameItems.Any())
             {
+                SelectedGameItem = null;
+
                 return;
             }
 
