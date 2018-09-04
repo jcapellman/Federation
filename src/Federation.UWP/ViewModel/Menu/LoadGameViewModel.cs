@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 
 using Federation.UWP.DAL;
 using Federation.UWP.Objects.Game;
@@ -21,9 +22,25 @@ namespace Federation.UWP.ViewModel.Menu
             }
         }
 
+        private MainGameItem _selectedGameItem;
+
+        public MainGameItem SelectedGameItem
+        {
+            get => _selectedGameItem;
+
+            set { _selectedGameItem = value; OnPropertyChanged(); }
+        }
+
         public LoadGameViewModel()
         {
             GameItems = new ObservableCollection<MainGameItem>(new LiteDBDAL().GetGameList());
+
+            if (!GameItems.Any())
+            {
+                return;
+            }
+
+            SelectedGameItem = GameItems.FirstOrDefault();
         }
     }
 }
