@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using Federation.UWP.Common;
 using Federation.UWP.Enums;
@@ -16,6 +17,8 @@ namespace Federation.UWP.Objects.Game
         public List<FactionStateGameItem> FactionStates { get; set; }
 
         public int TurnNumber { get; set; }
+
+        public DateTime SaveDate { get; set; }
 
         public MainGameItem(GameSize gameSize, Faction playerFaction)
         {
