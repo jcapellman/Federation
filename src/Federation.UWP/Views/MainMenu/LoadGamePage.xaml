@@ -24,7 +24,23 @@
         </Grid>
 
         <Grid Grid.Row="1" Margin="10,10,10,10">
-            <TextBlock HorizontalAlignment="Center" Text="No Games yet..." VerticalAlignment="Center" Foreground="White" />
+            <ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Text="{Binding PlayerFaction}" />
+                            <TextBlock Grid.Column="1" Text="{Binding TurnNumber}" />
+                            <TextBlock Grid.Column="2" Text="{Binding SaveDate}" />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
 
         <Grid Grid.Row="2" Style="{StaticResource MainButtonGroupGridStyle}">
