@@ -9,5 +9,7 @@ namespace Federation.UWP.DAL.Base
         public abstract IEnumerable<MainGameItem> GetGameList();
 
         public abstract bool SaveGame(MainGameItem gameItem);
+
+        public abstract bool DeleteGame(MainGameItem gameItem);
     }
 }
