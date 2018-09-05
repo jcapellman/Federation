@@ -35,5 +35,15 @@ namespace Federation.UWP.DAL
 
             return true;
         }
+
+        public override bool DeleteGame(MainGameItem gameItem)
+        {
+            using (var db = new LiteDatabase(ConnectionString))
+            {
+                var gameCollection = db.GetCollection<MainGameItem>();
+
+                return gameCollection.Delete(a => a == gameItem) > 0;
+            }
+        }
     }
 }
