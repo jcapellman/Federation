@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Federation.UWP.Common;
 using Federation.UWP.Enums;
@@ -46,18 +47,7 @@ namespace Federation.UWP.Objects.Game
 
             FactionStates = new List<FactionStateGameItem>();
 
-            foreach (var faction in ExtensionMethods.FactionList)
-            {
-                var factionStateItem = new FactionStateGameItem
-                {
-                    Credits = 1000,
-                    DilithiumCrystals = 100,
-                    Faction = faction,
-                    ResearchLevel = 1
-                };
-
-                FactionStates.Add(factionStateItem);
-            }
+            FactionStates = ExtensionMethods.FactionList.Select(a => new FactionStateGameItem(a)).ToList();
         }
     }
 }
