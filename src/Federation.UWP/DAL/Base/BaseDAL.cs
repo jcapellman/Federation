@@ -11,5 +11,7 @@ namespace Federation.UWP.DAL.Base
         public abstract bool SaveGame(MainGameItem gameItem);
 
         public abstract bool DeleteGame(MainGameItem gameItem);
+
+        public abstract bool OverwriteGame(MainGameItem gameItem);
     }
 }

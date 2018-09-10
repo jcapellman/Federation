@@ -5,10 +5,15 @@ using System.Linq;
 using Federation.UWP.Common;
 using Federation.UWP.Enums;
 
+using LiteDB;
+
 namespace Federation.UWP.Objects.Game
 {
     public class MainGameItem
     {
+        [BsonId]
+        public int GameID { get; set; }
+
         public GameSize GameSize { get; set; }
 
         public Faction PlayerFaction { get; set; }
