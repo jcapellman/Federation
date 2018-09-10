@@ -37,7 +37,7 @@ namespace Federation.UWP.Objects.Game
                 new GalaxyMapItem
                 {
                     Faction = playerFaction,
-                    SystemName = Common.Constants.FEDERATION_GAMESTART_SYSTEM
+                    SystemName = Constants.FEDERATION_GAMESTART_SYSTEM
                 }
             };
             
@@ -46,7 +46,7 @@ namespace Federation.UWP.Objects.Game
                 GalaxyMapItems.Add(new GalaxyMapItem
                 {
                     Faction = Faction.Unknown,
-                    SystemName = Common.Constants.GAMESTART_UNKNOWN_SYSTEM
+                    SystemName = Constants.GAMESTART_UNKNOWN_SYSTEM
                 });
             }
 
